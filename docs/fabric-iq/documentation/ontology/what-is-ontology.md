@@ -25,6 +25,8 @@ Both humans and AI agents use this shared language for cross-domain reasoning an
 
 ## Core concepts: your data in the ontology
 
+Once defined, you [bind the ontology to your data](https://learn.microsoft.com/en-us/fabric/iq/ontology/how-to-bind-data) to visualise and query it in context.
+
 - **Data binding** — connects entity types, properties, and relationships to concrete data in OneLake ([lakehouse tables](https://learn.microsoft.com/en-us/fabric/data-engineering/lakehouse-overview), [eventhouse streams](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/eventhouse), [semantic models](https://learn.microsoft.com/en-us/fabric/data-warehouse/semantic-models)). Adds schema-evolution rules, data-quality checks, and provenance, turning raw rows into governed business objects.
 
     !!! warning "Manual refresh"
@@ -45,4 +47,4 @@ Both humans and AI agents use this shared language for cross-domain reasoning an
 - Work through the [ontology tutorial](tutorial.md) ([Learn tutorial](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-0-introduction)).
 - See [generating an ontology from a semantic model](concepts/generating-from-semantic-model.md) ([Learn how-to](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-1-create-ontology?pivots=semantic-model#generating-an-ontology-from-a-semantic-model)).
 
-[Official documentation](https://learn.microsoft.com/en-us/fabric/iq/ontology/overview)
+*Curated from [Microsoft Learn](https://learn.microsoft.com/en-us/fabric/iq/ontology/overview) · Updated 2025-10-06*

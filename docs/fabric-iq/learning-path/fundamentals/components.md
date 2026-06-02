@@ -14,9 +14,13 @@ A conversational Q&A system powered by generative AI (Azure OpenAI Assistant API
 - Enforces **read-only** access and security so users only see permitted data.
 - Can be published to Microsoft 365 Copilot or integrated with Copilot Studio.
 
+![The data agent chat interface showing a natural-language question and answer.](https://learn.microsoft.com/en-us/training/wwl-data-ai/understand-fabric-iq-fundamentals/media/data-agent-interface.png){ .screenshot }
+
 ## Graph in Microsoft Fabric — visualise and traverse relationships
 
 Native graph storage and compute using a **labeled property graph** model (nodes and edges carry labels and properties). A managed graph is created automatically from your ontology's entity types and relationships; query it with **GQL**. Graph excels at relationship-heavy questions (hierarchies, assignments, dependency analysis) and operates directly on OneLake — no duplication or ETL. Ontology declares the concepts; Graph stores and computes the traversals.
+
+![The graph interface for exploring relationships visually.](https://learn.microsoft.com/en-us/training/wwl-data-ai/understand-fabric-iq-fundamentals/media/graph-interface.png){ .screenshot }
 
 ## Semantic models — generate ontologies from existing data models
 

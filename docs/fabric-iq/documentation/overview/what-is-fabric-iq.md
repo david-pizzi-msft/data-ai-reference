@@ -14,6 +14,15 @@ Fabric IQ is a Fabric **workload** that unifies data across OneLake and contextu
 - **Cross-domain reasoning** — graph links let you traverse relationships (e.g. *Order → Shipment → Sensor → Cold-chain breach*) to explain outcomes.
 - **AI-ready actions** — grounds copilots/agents in your ontology, and (via Fabric Activator) turns rules into governed, real-time actions like alerts.
 
+## Where Fabric IQ fits in Fabric
+
+Fabric IQ maps onto the standard Fabric capability stack:
+
+- **Ingest & store** — builds on lakehouse tables, eventhouse streams, and existing Power BI semantic models. It can also consume data shared across tenants via [OneLake external data sharing](https://learn.microsoft.com/en-us/fabric/governance/external-data-sharing-overview), and Plan uses [OneLake mirroring](https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview) and [shortcuts](https://learn.microsoft.com/en-us/fabric/onelake/onelake-shortcuts) to keep data in place.
+- **Model & represent semantics** — semantic models describe an analytical domain and can be exported to an ontology; the ontology adds entity types, properties, and relationship types, then binds them to data and builds a navigable graph automatically.
+- **Analyze & visualize** — Power BI reports sit on semantic models; ontology and Graph add a visual graph and concept-level query experience. Sharing terminology keeps analysis consistent across items.
+- **Operate & govern** — version, validate, and govern ontology definitions; lineage and auditing apply across all sources (including shortcuts and cross-tenant shares). Plan adds workflow approvals and audit trails for writeback.
+
 ## Items in the workload
 
 | Item | Role |
@@ -41,6 +50,6 @@ Several items are shared with the Real-Time Intelligence and Power BI workloads.
 | Cross-domain consistency, governance, AI grounding | **Ontology** |
 | Relationship-heavy questions (impact chains, shortest paths) | **Graph** |
 | Trusted KPIs and fast self-service visuals | **Power BI semantic model** |
-| Operational context, stateful twins, what-if simulation | **Digital twin builder** (Real-Time Intelligence) |
+| Operational context, stateful twins, what-if simulation | **[Digital twin builder](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/digital-twin-builder/overview)** (Real-Time Intelligence) |
 
-[Official documentation](https://learn.microsoft.com/en-us/fabric/iq/overview)
+*Curated from [Microsoft Learn](https://learn.microsoft.com/en-us/fabric/iq/overview) · Updated 2026-05-11*

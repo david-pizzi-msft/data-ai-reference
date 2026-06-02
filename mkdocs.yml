@@ -104,11 +104,12 @@ nav:
                   - Generating an ontology from a semantic model: fabric-iq/documentation/ontology/concepts/generating-from-semantic-model.md
               - How-tos: fabric-iq/documentation/ontology/how-tos.md
               - Resources: fabric-iq/documentation/ontology/resources.md
+          - Plan: fabric-iq/documentation/plan.md
           - Graph: fabric-iq/documentation/graph.md
           - Data Agent: fabric-iq/documentation/data-agent.md
           - Operations Agent: fabric-iq/documentation/operations-agent.md
-          - Plan: fabric-iq/documentation/plan.md
           - Power BI Semantic Model: fabric-iq/documentation/semantic-model.md
+          - Integrations: fabric-iq/documentation/integrations.md
       - Get Started Learning Path:
           - fabric-iq/learning-path/index.md
           - 1 · Fundamentals:

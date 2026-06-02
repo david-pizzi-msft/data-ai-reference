@@ -45,4 +45,4 @@ For troubleshooting, see [Troubleshoot ontology](https://learn.microsoft.com/en-
 
 For a worked example, see the [ontology tutorial](../tutorial.md) ([Learn: Create an ontology](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-1-create-ontology?pivots=semantic-model)).
 
-[Official documentation](https://learn.microsoft.com/en-us/fabric/iq/ontology/concepts-generate)
+*Curated from [Microsoft Learn](https://learn.microsoft.com/en-us/fabric/iq/ontology/concepts-generate) · Updated 2026-01-20*

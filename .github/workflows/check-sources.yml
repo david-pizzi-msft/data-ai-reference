@@ -1,0 +1,27 @@
+name: Check Learn source freshness
+
+on:
+  schedule:
+    # Every Monday at 07:00 UTC
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      # Exits non-zero when any page is behind its Learn source, which makes
+      # the scheduled run fail and notifies the repo owner by email.
+      - name: Run source freshness check
+        run: python scripts/check_sources.py

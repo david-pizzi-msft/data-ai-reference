@@ -14,10 +14,16 @@ An ontology is a shared vocabulary of your business: the things in your environm
 
 Create it like any Fabric item: **+ New item → Ontology (preview) → name it** (letters, numbers, underscores — no spaces or dashes) → **Create**. A [Fabric admin must enable the required tenant settings](../../documentation/ontology/required-tenant-settings.md) first.
 
+![Creating a new Ontology item from the New item dialog.](https://learn.microsoft.com/en-us/training/wwl-data-ai/understand-fabric-iq-fundamentals/media/new-ontology-item.png){ .screenshot }
+
 The ontology has two views:
 
 - **Configuration canvas** — where you build entity types, properties, and relationship types.
 - **Preview experience** — shows instantiated entity instances and a graph visualisation, and lets you query in business language instead of SQL.
+
+![The ontology configuration canvas showing entity types, properties, and relationships.](https://learn.microsoft.com/en-us/training/wwl-data-ai/understand-fabric-iq-fundamentals/media/configuration-canvas.png){ .screenshot }
+
+![The ontology preview experience with graph visualisation and entity instances.](https://learn.microsoft.com/en-us/training/wwl-data-ai/understand-fabric-iq-fundamentals/media/preview-ontology.png){ .screenshot }
 
 ## The build–bind–query workflow
 

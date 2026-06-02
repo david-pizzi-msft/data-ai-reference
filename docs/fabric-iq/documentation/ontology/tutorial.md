@@ -11,3 +11,5 @@ It offers two paths:
     A workspace on Fabric-enabled capacity, plus the [required tenant settings](required-tenant-settings.md) enabled.
 
 [Start the tutorial on Microsoft Learn](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-0-introduction)
+
+*Curated from [Microsoft Learn](https://learn.microsoft.com/en-us/fabric/iq/ontology/tutorial-0-introduction) · Updated 2026-04-13*

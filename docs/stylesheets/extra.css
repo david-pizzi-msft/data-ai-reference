@@ -220,6 +220,16 @@
   background-color: var(--md-default-fg-color--lightest);
 }
 
+/* ---- Screenshots (Learn images) --------------------------------------- */
+.md-typeset img.screenshot {
+  display: block;
+  max-width: 100%;
+  margin: 1.2rem auto;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+}
+
 /* ---- Grid cards (homepage) -------------------------------------------- */
 .md-typeset .grid.cards > ul > li {
   border: 1px solid var(--md-default-fg-color--lightest);
