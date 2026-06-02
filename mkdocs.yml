@@ -62,6 +62,12 @@ markdown_extensions:
 
 plugins:
   - search
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      zoomable: true
+      draggable: true
 
 extra_css:
   - stylesheets/extra.css
@@ -117,9 +123,24 @@ nav:
               - Get started with Fabric IQ: fabric-iq/learning-path/fundamentals/get-started.md
               - Explore Fabric IQ components: fabric-iq/learning-path/fundamentals/components.md
               - The ontology modeling paradigm: fabric-iq/learning-path/fundamentals/modeling-paradigm.md
-          - 2 · Create an ontology: fabric-iq/learning-path/create-ontology.md
-          - 3 · Visualise data: fabric-iq/learning-path/visualise-data.md
-          - 4 · Build a data agent: fabric-iq/learning-path/build-data-agent.md
+          - 2 · Create an ontology:
+              - fabric-iq/learning-path/create-ontology/index.md
+              - Choose an ontology creation approach: fabric-iq/learning-path/create-ontology/evaluate-approaches.md
+              - Build an ontology manually: fabric-iq/learning-path/create-ontology/build-manually.md
+              - Generate from a semantic model: fabric-iq/learning-path/create-ontology/generate-from-semantic-model.md
+              - Connect an ontology to data: fabric-iq/learning-path/create-ontology/connect-to-data.md
+              - Configure ontology relationships: fabric-iq/learning-path/create-ontology/configure-relationships.md
+              - Preview the ontology: fabric-iq/learning-path/create-ontology/preview.md
+          - 3 · Visualise data:
+              - fabric-iq/learning-path/visualise-data/index.md
+              - Explore the ontology: fabric-iq/learning-path/visualise-data/explore.md
+              - Visualise relationships: fabric-iq/learning-path/visualise-data/visualize-relationships.md
+              - Filter with the Query builder: fabric-iq/learning-path/visualise-data/query-builder.md
+          - 4 · Build a data agent:
+              - fabric-iq/learning-path/build-data-agent/index.md
+              - Data agents and ontology sources: fabric-iq/learning-path/build-data-agent/understand-data-agents.md
+              - Create an agent and connect an ontology: fabric-iq/learning-path/build-data-agent/create-and-connect.md
+              - Test, validate, and publish: fabric-iq/learning-path/build-data-agent/test-validate-publish.md
   - Agentic AI:
       - agentic-ai/index.md
       - CE&S Power Up Programme:

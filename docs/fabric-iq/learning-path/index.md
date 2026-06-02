@@ -17,15 +17,15 @@ Fabric IQ lets you define business vocabulary in an ontology and bind it to data
 
     What is IQ, ontology modelling vs traditional modelling.
 
-- **[2 · Create an ontology](create-ontology.md)**
+- **[2 · Create an ontology](create-ontology/index.md)**
 
     Entity types, properties, relationships, data bindings.
 
-- **[3 · Visualise ontology data](visualise-data.md)**
+- **[3 · Visualise ontology data](visualise-data/index.md)**
 
     Entity instances, relationship graph, Query builder.
 
-- **[4 · Build a Fabric data agent](build-data-agent.md)**
+- **[4 · Build a Fabric data agent](build-data-agent/index.md)**
 
     Data agents, agent instructions, NL queries, publishing.
 
