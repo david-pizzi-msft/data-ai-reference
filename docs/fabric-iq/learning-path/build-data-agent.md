@@ -1,7 +1,7 @@
 # 4 · Build a Fabric data agent with an ontology
 
-> **Module 4 of 4** · 1 hr 5 min
+> **Module 4 of 4** · 7 units
 
-**Key topics:** Data agents, agent instructions, NL queries, publishing.
+Create a Fabric data agent that uses a Fabric IQ ontology as its data source. Configure agent instructions to improve query accuracy, test natural-language questions, and publish the agent so business users get governed data answers without writing code.
 
-`Placeholder — add your notes here.`
+[Start this module on Microsoft Learn](https://learn.microsoft.com/en-us/training/modules/build-fabric-data-agent-ontology/)

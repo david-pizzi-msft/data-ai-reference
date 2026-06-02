@@ -101,7 +101,6 @@ nav:
                   - Required tenant settings: fabric-iq/documentation/ontology/required-tenant-settings.md
               - Ontology tutorial: fabric-iq/documentation/ontology/tutorial.md
               - Concepts:
-                  - fabric-iq/documentation/ontology/concepts/index.md
                   - Generating an ontology from a semantic model: fabric-iq/documentation/ontology/concepts/generating-from-semantic-model.md
               - How-tos: fabric-iq/documentation/ontology/how-tos.md
               - Resources: fabric-iq/documentation/ontology/resources.md
@@ -112,7 +111,11 @@ nav:
           - Power BI Semantic Model: fabric-iq/documentation/semantic-model.md
       - Get Started Learning Path:
           - fabric-iq/learning-path/index.md
-          - 1 · Fundamentals: fabric-iq/learning-path/fundamentals.md
+          - 1 · Fundamentals:
+              - fabric-iq/learning-path/fundamentals/index.md
+              - Get started with Fabric IQ: fabric-iq/learning-path/fundamentals/get-started.md
+              - Explore Fabric IQ components: fabric-iq/learning-path/fundamentals/components.md
+              - The ontology modeling paradigm: fabric-iq/learning-path/fundamentals/modeling-paradigm.md
           - 2 · Create an ontology: fabric-iq/learning-path/create-ontology.md
           - 3 · Visualise data: fabric-iq/learning-path/visualise-data.md
           - 4 · Build a data agent: fabric-iq/learning-path/build-data-agent.md

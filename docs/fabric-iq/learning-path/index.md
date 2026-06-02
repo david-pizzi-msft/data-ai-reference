@@ -1,26 +1,31 @@
 # Get Started with Fabric IQ
 
-> **Level:** Beginner · **Duration:** ~5 hours · **Modules:** 4
+> **Level:** Beginner · **Modules:** 4 · **Roles:** Data Analyst, Data Engineer
 
-The [Get Started with Fabric IQ](https://learn.microsoft.com/en-us/training/paths/get-started-fabric-iq/) learning path.
+Fabric IQ lets you define business vocabulary in an ontology and bind it to data sources in OneLake. This [learning path](https://learn.microsoft.com/en-us/training/paths/get-started-fabric-iq/) starts with the fundamentals, then builds an ontology with entity types and relationships, visualises data through interactive graphs, and connects an ontology to a data agent for natural-language Q&A.
+
+**Prerequisites**
+
+- Familiarity with Microsoft Fabric workspaces and navigation.
+- Basic understanding of data concepts such as tables, relationships, and queries.
 
 ## Modules
 
 <div class="grid cards" markdown>
 
-- **[1 · IQ fundamentals](fundamentals.md)** — 37 min
+- **[1 · IQ fundamentals](fundamentals/index.md)**
 
     What is IQ, ontology modelling vs traditional modelling.
 
-- **[2 · Create an ontology](create-ontology.md)** — 2 hr 23 min
+- **[2 · Create an ontology](create-ontology.md)**
 
     Entity types, properties, relationships, data bindings.
 
-- **[3 · Visualise ontology data](visualise-data.md)** — 46 min
+- **[3 · Visualise ontology data](visualise-data.md)**
 
     Entity instances, relationship graph, Query builder.
 
-- **[4 · Build a Fabric data agent](build-data-agent.md)** — 1 hr 5 min
+- **[4 · Build a Fabric data agent](build-data-agent.md)**
 
     Data agents, agent instructions, NL queries, publishing.
 
