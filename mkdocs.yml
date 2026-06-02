@@ -1,0 +1,125 @@
+site_name: Data & AI Reference
+site_description: Personal quick-reference for Microsoft Fabric, Fabric IQ, and Agentic AI
+site_author: David Pizzi
+site_url: https://david-pizzi-msft.github.io/data-ai-reference/
+repo_url: https://github.com/david-pizzi-msft/data-ai-reference
+repo_name: david-pizzi-msft/data-ai-reference
+copyright: Copyright &copy; 2026 David Pizzi
+
+theme:
+  name: material
+  logo: assets/microsoft-logo.svg
+  favicon: assets/microsoft-logo.svg
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Segoe UI
+    code: Cascadia Code
+  palette:
+    # Light mode (default)
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Dark mode (opt-in via toggle)
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/david-pizzi-msft
+      name: GitHub
+
+nav:
+  - Home: index.md
+  - Microsoft Fabric:
+      - fabric/index.md
+      - Foundational:
+          - fabric/foundational/index.md
+          - What is Fabric?: fabric/foundational/what-is-fabric.md
+          - Fundamentals: fabric/foundational/fundamentals.md
+          - Terminology: fabric/foundational/terminology.md
+      - DP-600 Certification:
+          - fabric/dp-600/index.md
+          - 1 · Explore data stores: fabric/dp-600/explore-data-stores.md
+          - 2 · Transform data: fabric/dp-600/transform-data.md
+          - 3 · Semantic models: fabric/dp-600/semantic-models.md
+          - 4 · AI-ready data: fabric/dp-600/ai-ready-data.md
+          - 5 · Secure & govern: fabric/dp-600/secure-govern.md
+  - Fabric IQ:
+      - fabric-iq/index.md
+      - Documentation:
+          - fabric-iq/documentation/index.md
+          - Overview:
+              - What is Fabric IQ?: fabric-iq/documentation/overview/what-is-fabric-iq.md
+          - Ontology:
+              - fabric-iq/documentation/ontology/index.md
+              - Overview:
+                  - What is an ontology?: fabric-iq/documentation/ontology/what-is-ontology.md
+                  - Required tenant settings: fabric-iq/documentation/ontology/required-tenant-settings.md
+              - Ontology tutorial: fabric-iq/documentation/ontology/tutorial.md
+              - Concepts:
+                  - fabric-iq/documentation/ontology/concepts/index.md
+                  - Generating an ontology from a semantic model: fabric-iq/documentation/ontology/concepts/generating-from-semantic-model.md
+              - How-tos: fabric-iq/documentation/ontology/how-tos.md
+              - Resources: fabric-iq/documentation/ontology/resources.md
+          - Graph: fabric-iq/documentation/graph.md
+          - Data Agent: fabric-iq/documentation/data-agent.md
+          - Operations Agent: fabric-iq/documentation/operations-agent.md
+          - Plan: fabric-iq/documentation/plan.md
+          - Power BI Semantic Model: fabric-iq/documentation/semantic-model.md
+      - Get Started Learning Path:
+          - fabric-iq/learning-path/index.md
+          - 1 · Fundamentals: fabric-iq/learning-path/fundamentals.md
+          - 2 · Create an ontology: fabric-iq/learning-path/create-ontology.md
+          - 3 · Visualise data: fabric-iq/learning-path/visualise-data.md
+          - 4 · Build a data agent: fabric-iq/learning-path/build-data-agent.md
+  - Agentic AI:
+      - agentic-ai/index.md
+      - CE&S Power Up Programme:
+          - agentic-ai/power-up/index.md
+          - Level 1 — Foundations: agentic-ai/power-up/level-1.md
+          - Level 2 — Builder: agentic-ai/power-up/level-2.md
+          - Level 3 — Advanced: agentic-ai/power-up/level-3.md

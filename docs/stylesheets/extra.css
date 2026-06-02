@@ -1,0 +1,297 @@
+/* ===========================================================================
+   Data & AI Reference — custom theme
+   =========================================================================== */
+
+:root {
+  /* Microsoft brand palette (microsoft.com) */
+  --md-primary-fg-color:        #0067b8;  /* Microsoft blue */
+  --md-primary-fg-color--light: #2b88d8;
+  --md-primary-fg-color--dark:  #004578;
+  --md-accent-fg-color:         #005da6;
+  --ms-red:    #f25022;
+  --ms-green:  #7fba00;
+  --ms-cyan:   #00a4ef;
+  --ms-yellow: #ffb900;
+}
+
+/* Dark-mode tuning: deeper, less flat background + brand accents */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:        #0f1419;
+  --md-default-bg-color--light: #161b22;
+  --md-code-bg-color:           #161b22;
+  --md-accent-fg-color:         #2b88d8;
+}
+
+/* ---- Layout: maximise reading width, trim white space ------------------ */
+/* Widen the overall content grid */
+.md-grid {
+  max-width: 90rem;
+}
+
+/* Let the article use the available width */
+.md-content {
+  max-width: none;
+}
+
+.md-content__inner {
+  margin: 0 1.2rem 1rem;
+  padding-top: 0.6rem;
+}
+
+/* Remove the top spacer pseudo-element that adds dead space */
+.md-content__inner::before {
+  height: 0.4rem;
+}
+
+/* ---- Footer: slim copyright bar (prev/next removed via theme config) ---- */
+.md-footer-meta {
+  font-size: 0.6rem;
+}
+
+.md-footer-meta__inner {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+/* ---- Typography -------------------------------------------------------- */
+.md-typeset {
+  font-feature-settings: "kern", "liga";
+  line-height: 1.7;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2.4rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+/* ---- Header: Microsoft.com style (white bar, dark text) ---------------- */
+.md-header {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.md-header__title,
+.md-header__topic {
+  color: #000000;
+  font-weight: 600;
+}
+
+/* Lighter, smaller byline appended after the site title */
+.md-header__topic:first-child .md-ellipsis::after {
+  content: " · David Pizzi";
+  font-weight: 400;
+  opacity: 0.6;
+  font-size: 0.85em;
+}
+
+/* Header icons (search, menu, palette toggle, repo) in dark */
+.md-header__button,
+.md-search__input,
+.md-search__icon {
+  color: #000000;
+}
+
+.md-search__input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Logo sizing */
+.md-header__button.md-logo img {
+  height: 1.5rem;
+  width: auto;
+}
+
+/* Tabs bar: light grey strip with dark links, blue active underline */
+.md-tabs {
+  background-color: #f3f3f3;
+  color: #000000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.md-tabs__link {
+  color: #000000;
+  opacity: 0.85;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: var(--md-primary-fg-color);
+  opacity: 1;
+}
+
+/* Dark mode keeps a dark header */
+[data-md-color-scheme="slate"] .md-header {
+  background-color: #161b22;
+  color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .md-header__title,
+[data-md-color-scheme="slate"] .md-header__topic,
+[data-md-color-scheme="slate"] .md-header__button,
+[data-md-color-scheme="slate"] .md-search__input,
+[data-md-color-scheme="slate"] .md-search__icon {
+  color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #0f1419;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+[data-md-color-scheme="slate"] .md-tabs__link {
+  color: #ffffff;
+}
+
+/* ---- Tables: rounded, shadowed, with hover ----------------------------- */
+.md-typeset table:not([class]) {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  border: none;
+  font-size: 0.74rem;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--md-primary-fg-color);
+  color: #fff;
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) tr:hover {
+  background-color: var(--md-default-fg-color--lightest);
+}
+
+/* ---- Grid cards (homepage) -------------------------------------------- */
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  background: var(--md-default-bg-color--light, var(--md-default-bg-color));
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  border-color: var(--md-accent-fg-color);
+}
+
+/* Product logo on cards */
+.md-typeset .card-logo {
+  width: 1.6rem;
+  height: 1.6rem;
+  vertical-align: -0.4rem;
+  margin-right: 0.4rem;
+}
+
+/* Product logo in page heading */
+.md-typeset h1 .page-logo {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: -0.45rem;
+  margin-right: 0.5rem;
+}
+
+/* Per-product optical size tuning (each artwork has different internal padding) */
+.md-typeset .logo-iq {
+  transform: scale(1.22);
+}
+
+.md-typeset .logo-copilot {
+  transform: scale(1.08);
+}
+
+.md-typeset .grid.cards > ul > li > :first-child {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Card title links: neutral by default, accent on hover (not bold blue) */
+.md-typeset .grid.cards > ul > li > :first-child strong {
+  font-weight: 500;
+}
+
+.md-typeset .grid.cards > ul > li > :first-child a {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+
+.md-typeset .grid.cards > ul > li:hover > :first-child a {
+  color: var(--md-primary-fg-color);
+}
+
+/* ---- Hero block (homepage) -------------------------------------------- */
+.hero {
+  padding: 1.25rem 0 1.75rem;
+  margin: 0 0 1.5rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--md-primary-fg-color);
+  margin: 0 0 0.4rem;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+  border: none;
+}
+
+.hero h1 .headerlink {
+  display: none;
+}
+
+.hero__lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--md-default-fg-color--light);
+  max-width: 42rem;
+  margin: 0.6rem 0 0;
+}
+
+.hero__lead strong {
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+/* ---- Links: subtle underline on hover --------------------------------- */
+.md-typeset a {
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.md-typeset a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---- Admonitions: a touch softer -------------------------------------- */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  border-left-width: 4px;
+}
+
+/* ---- Code: rounded inline code ---------------------------------------- */
+.md-typeset code {
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+}
