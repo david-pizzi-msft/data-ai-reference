@@ -100,6 +100,11 @@
   color: #000000;
 }
 
+.md-search__icon svg {
+  color: #000000;
+  fill: currentColor;
+}
+
 .md-search__input::placeholder {
   color: rgba(0, 0, 0, 0.55);
 }
@@ -160,6 +165,11 @@
 [data-md-color-scheme="slate"] .md-search__input,
 [data-md-color-scheme="slate"] .md-search__icon {
   color: #ffffff;
+}
+
+[data-md-color-scheme="slate"] .md-search__icon svg {
+  color: #ffffff;
+  fill: currentColor;
 }
 
 /* Search field: clean bordered input (dark mode) */
