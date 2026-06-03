@@ -5,6 +5,20 @@ Fabric IQ is a Fabric **workload** that unifies data across OneLake and contextu
 !!! note "Preview"
     Fabric IQ is in preview. Capabilities and tenant settings are subject to change.
 
+!!! info "Part of Microsoft IQ"
+    Fabric IQ is the data-context capability within **Microsoft IQ**, working alongside
+    **Work IQ** (how employees work), **Foundry IQ** (policies and authoritative docs), and
+    **Web IQ** (context from the web). Fabric IQ provides context on business entities and data.
+
+## Three layers of context
+
+Fabric IQ brings three layers of business context, delivered through two core items —
+**ontology** and **semantic model** — over shared OneLake data:
+
+- **Unified data (OneLake)** — shortcuts, mirroring, and the OneLake catalog unify multicloud and on-premises data into one governed source of truth, and distribute it to Fabric workloads, Foundry, and Copilot Studio.
+- **Business intelligence (Power BI semantic models)** — curated measures, hierarchies, and dimensions; ontologies can be generated from production semantic models to keep business language consistent.
+- **Operational intelligence (ontologies)** — define entities, relationships, properties, rules, and actions; query in natural language via the **NL2Ontology** layer; operations agents monitor live data, detect anomalies, and take governed action.
+
 ## Why use it
 
 - **Unify data** — combine lakehouses, eventhouses, and Power BI semantic models into one consistent model; reference external data in place via OneLake shortcuts (no ETL/copy).
@@ -52,4 +66,4 @@ Several items are shared with the Real-Time Intelligence and Power BI workloads.
 | Trusted KPIs and fast self-service visuals | **Power BI semantic model** |
 | Operational context, stateful twins, what-if simulation | **[Digital twin builder](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/digital-twin-builder/overview)** (Real-Time Intelligence) |
 
-*Curated from [Microsoft Learn](https://learn.microsoft.com/en-us/fabric/iq/overview) · Updated 2026-05-11*
+*Curated from [Microsoft Learn](https://learn.microsoft.com/en-us/fabric/iq/overview) · Updated 2026-05-26*
