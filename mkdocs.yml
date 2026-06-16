@@ -107,6 +107,7 @@ nav:
                   - Required tenant settings: fabric-iq/documentation/ontology/required-tenant-settings.md
               - Ontology tutorial: fabric-iq/documentation/ontology/tutorial.md
               - Concepts:
+                  - fabric-iq/documentation/ontology/concepts/index.md
                   - Generating an ontology from a semantic model: fabric-iq/documentation/ontology/concepts/generating-from-semantic-model.md
               - How-tos: fabric-iq/documentation/ontology/how-tos.md
               - Resources: fabric-iq/documentation/ontology/resources.md
