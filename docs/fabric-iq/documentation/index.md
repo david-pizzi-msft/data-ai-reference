@@ -18,7 +18,7 @@ External: [Fabric IQ documentation hub](https://learn.microsoft.com/en-us/fabric
 
     Native graph storage & compute (GQL).
 
-- **[Data Agent](data-agent.md)** (preview)
+- **[Data Agent](data-agent/index.md)**
 
     Conversational Q&A grounded in ontology.
 

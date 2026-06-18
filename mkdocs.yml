@@ -113,7 +113,36 @@ nav:
               - Resources: fabric-iq/documentation/ontology/resources.md
           - Plan: fabric-iq/documentation/plan.md
           - Graph: fabric-iq/documentation/graph.md
-          - Data Agent: fabric-iq/documentation/data-agent.md
+          - Data Agent:
+              - fabric-iq/documentation/data-agent/index.md
+              - What is a data agent?: fabric-iq/documentation/data-agent/what-is-data-agent.md
+              - Tenant settings: fabric-iq/documentation/data-agent/tenant-settings.md
+              - Create a data agent: fabric-iq/documentation/data-agent/create.md
+              - Fabric data agent SDK: fabric-iq/documentation/data-agent/sdk.md
+              - Evaluate a data agent: fabric-iq/documentation/data-agent/evaluate.md
+              - Configure your data agent:
+                  - fabric-iq/documentation/data-agent/configure/index.md
+                  - Data agent configurations: fabric-iq/documentation/data-agent/configure/configurations.md
+                  - Semantic model best practices: fabric-iq/documentation/data-agent/configure/semantic-model-best-practices.md
+                  - Example queries: fabric-iq/documentation/data-agent/configure/example-queries.md
+                  - Best practices for configuring: fabric-iq/documentation/data-agent/configure/best-practices.md
+                  - How to configure a data agent: fabric-iq/documentation/data-agent/configure/how-to-configure.md
+                  - Add a data source: fabric-iq/documentation/data-agent/configure/add-data-sources.md
+                  - Connect to a Foundry Search Index: fabric-iq/documentation/data-agent/configure/foundry-search-index.md
+                  - Code interpreter: fabric-iq/documentation/data-agent/configure/code-interpreter.md
+              - Consume & integrate:
+                  - fabric-iq/documentation/data-agent/consume/index.md
+                  - Get visual responses: fabric-iq/documentation/data-agent/consume/visuals.md
+                  - Microsoft Foundry: fabric-iq/documentation/data-agent/consume/foundry.md
+                  - Copilot in Power BI: fabric-iq/documentation/data-agent/consume/copilot-powerbi.md
+                  - Copilot Studio: fabric-iq/documentation/data-agent/consume/copilot-studio.md
+                  - Python client SDK: fabric-iq/documentation/data-agent/consume/python-sdk.md
+                  - Microsoft 365 Copilot: fabric-iq/documentation/data-agent/consume/microsoft-365-copilot.md
+                  - MCP server: fabric-iq/documentation/data-agent/consume/mcp-server.md
+              - Source control, CI/CD & ALM: fabric-iq/documentation/data-agent/source-control-alm.md
+              - Service principal: fabric-iq/documentation/data-agent/service-principal.md
+              - End-to-end tutorial: fabric-iq/documentation/data-agent/tutorial.md
+              - Sharing & permissions: fabric-iq/documentation/data-agent/sharing.md
           - Operations Agent: fabric-iq/documentation/operations-agent.md
           - Power BI Semantic Model: fabric-iq/documentation/semantic-model.md
           - Integrations: fabric-iq/documentation/integrations.md
