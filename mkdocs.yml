@@ -171,6 +171,12 @@ nav:
               - Data agents and ontology sources: fabric-iq/learning-path/build-data-agent/understand-data-agents.md
               - Create an agent and connect an ontology: fabric-iq/learning-path/build-data-agent/create-and-connect.md
               - Test, validate, and publish: fabric-iq/learning-path/build-data-agent/test-validate-publish.md
+      - Implement Data Agents Module:
+          - fabric-iq/learning-path/implement-data-agents/index.md
+          - Understand data agent capabilities: fabric-iq/learning-path/implement-data-agents/capabilities.md
+          - Implement an end-to-end data agent: fabric-iq/learning-path/implement-data-agents/end-to-end.md
+          - Integrate with Microsoft Foundry: fabric-iq/learning-path/implement-data-agents/foundry.md
+          - Use within Power BI: fabric-iq/learning-path/implement-data-agents/power-bi.md
   - Agentic AI:
       - agentic-ai/index.md
       - CE&S Power Up Programme:
@@ -178,3 +184,10 @@ nav:
           - Level 1 — Foundations: agentic-ai/power-up/level-1.md
           - Level 2 — Builder: agentic-ai/power-up/level-2.md
           - Level 3 — Advanced: agentic-ai/power-up/level-3.md
+      - Connected Agents in Copilot Studio:
+          - agentic-ai/connected-agents/index.md
+          - Understand connected agents: agentic-ai/connected-agents/understand.md
+          - Connect a Copilot Studio agent: agentic-ai/connected-agents/connect-copilot-studio.md
+          - Connect a Microsoft Foundry agent: agentic-ai/connected-agents/connect-foundry.md
+          - Connect a Fabric Data agent: agentic-ai/connected-agents/connect-fabric-data.md
+          - Manage and test the solution: agentic-ai/connected-agents/manage-test.md

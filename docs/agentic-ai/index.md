@@ -10,4 +10,8 @@ Building AI agents with Copilot Studio and related Microsoft tooling.
 
     The 8-week agent-building learning experience.
 
+- **[Connected agents in Copilot Studio](connected-agents/index.md)**
+
+    Build multi-agent solutions by connecting orchestrators to other agents.
+
 </div>
