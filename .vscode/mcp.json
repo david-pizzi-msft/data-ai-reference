@@ -1,8 +1,19 @@
 {
   "servers": {
-    "microsoft-learn": {
+     "microsoft-learn": {
       "type": "http",
       "url": "https://learn.microsoft.com/api/mcp"
+    },
+    "deepWiki": {
+			"url": "https://mcp.deepwiki.com/mcp",
+			"type": "http"
+		},
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "X-MCP-Toolsets": "default,copilot_spaces"
+      }
     }
   }
 }
