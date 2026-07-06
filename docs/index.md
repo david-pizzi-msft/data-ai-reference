@@ -4,7 +4,7 @@
 
 # Data & AI Reference
 
-<p class="hero__lead">A concise, always-current quick-reference for <strong>Microsoft Fabric</strong>, <strong>Fabric IQ</strong>, and <strong>Agentic AI</strong>.</p>
+<p class="hero__lead">A concise, always-current quick-reference for <strong>Microsoft Fabric</strong> and <strong>Fabric IQ</strong>.</p>
 
 </div>
 
@@ -19,10 +19,6 @@
 - ![Fabric IQ](assets/fabric-iq.svg){ .card-logo .logo-iq } **[Fabric IQ](fabric-iq/index.md)**
 
     Ontologies, graphs, data agents, and the new IQ workload.
-
-- ![Copilot](assets/copilot.png){ .card-logo .logo-copilot } **[Agentic AI](agentic-ai/index.md)**
-
-    Copilot Studio, the CE&S Power Up programme, and building AI agents.
 
 </div>
 
