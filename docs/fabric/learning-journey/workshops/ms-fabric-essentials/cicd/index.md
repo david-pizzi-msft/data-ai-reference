@@ -3,7 +3,7 @@
 !!! info "Source"
     [AzurePortal/4_CICD](https://github.com/Cloud2BR-MSFTLearningHub/MS-Fabric-Essentials-Workshop/tree/main/AzurePortal/4_CICD)
 
-**Status:** 🟡 In progress
+**Status:** ✅ Complete
 
 The workshop's CI/CD module covers the two ways to promote and version Fabric content:
 **deployment pipelines** (stage-to-stage promotion inside Fabric) and **GitHub integration**
@@ -14,7 +14,7 @@ pipelines push content between environments.
 
 | # | Workshop | What it does | Status |
 | --- | --- | --- | --- |
-| 0 | [Deployment pipelines](deployment-pipelines.md) | Promote a lakehouse, semantic model, and report across Dev → Prod stages. | 🟡 In progress |
+| 0 | [Deployment pipelines](deployment-pipelines.md) | Promote a lakehouse, semantic model, and report across Dev → Prod stages. | ✅ Complete |
 | 1 | [GitHub integration](github-integration.md) | Connect a workspace to a Git repo and commit/update items. | ✅ Documented |
 
 ## Pipelines vs. Git — when to use which
