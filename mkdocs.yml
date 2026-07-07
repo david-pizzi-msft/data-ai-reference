@@ -102,6 +102,8 @@ nav:
           - fabric/learning-journey/index.md
           - Workshops & Labs:
               - fabric/learning-journey/workshops/index.md
+              - Microsoft Fabric Workshops: fabric/learning-journey/workshops/microsoft-fabric-workshops.md
+              - mslearn-fabric Exercises: fabric/learning-journey/workshops/mslearn-fabric.md
               - MS Fabric Essentials:
                   - fabric/learning-journey/workshops/ms-fabric-essentials/index.md
                   - 0 · Overview: fabric/learning-journey/workshops/ms-fabric-essentials/overview.md
@@ -109,8 +111,7 @@ nav:
                   - 2 · AI + LLMs: fabric/learning-journey/workshops/ms-fabric-essentials/ai-llms.md
                   - 3 · AI Skills: fabric/learning-journey/workshops/ms-fabric-essentials/ai-skills.md
                   - 4 · CI/CD: fabric/learning-journey/workshops/ms-fabric-essentials/cicd.md
-              - Microsoft Fabric Workshops: fabric/learning-journey/workshops/microsoft-fabric-workshops.md
-              - mslearn-fabric Exercises: fabric/learning-journey/workshops/mslearn-fabric.md
+              - End-to-end tutorials in Fabric: fabric/learning-journey/workshops/end-to-end-tutorials.md
   - Fabric IQ:
       - fabric-iq/index.md
       - Documentation:

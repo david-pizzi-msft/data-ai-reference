@@ -12,7 +12,7 @@ Introductory Microsoft Fabric workshop. Covers Fabric overview, Medallion archit
 | # | Section | Status |
 | --- | --- | --- |
 | 0 | [Overview](overview.md) | ✅ Documented |
-| 1 | [Medallion Architecture](medallion-architecture.md) | 🟡 In progress |
-| 2 | [AI + LLMs](ai-llms.md) | ⬜ Not started |
-| 3 | [AI Skills](ai-skills.md) | ⬜ Not started |
-| 4 | [CI/CD](cicd.md) | ⬜ Not started |
+| 1 | [Medallion Architecture](medallion-architecture.md) | ✅ Complete |
+| 2 | [AI + LLMs](ai-llms.md) | ⏸️ Postponed |
+| 3 | [AI Skills](ai-skills.md) | ⏸️ Postponed |
+| 4 | [CI/CD](cicd.md) | ⬜ Not started (next) |

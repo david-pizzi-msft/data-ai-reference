@@ -3,7 +3,7 @@
 !!! info "Source"
     [AzurePortal/1_MedallionArch](https://github.com/Cloud2BR-MSFTLearningHub/MS-Fabric-Essentials-Workshop/tree/main/AzurePortal/1_MedallionArch)
 
-**Status:** 🟡 In progress
+**Status:** ✅ Complete
 
 ## What this lab does
 
