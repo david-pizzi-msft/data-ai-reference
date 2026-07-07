@@ -54,6 +54,99 @@ Step 2 shows **several ways** to land data in Bronze — you only need **one**. 
 !!! tip "Recommended path for this lab"
     Use the **CSV path**. The sample notebooks ([bronze→silver](https://github.com/Cloud2BR-MSFTLearningHub/MS-Fabric-Essentials-Workshop/blob/main/AzurePortal/1_MedallionArch/src/0_notebook_bronze_to_silver.ipynb), [silver→gold](https://github.com/Cloud2BR-MSFTLearningHub/MS-Fabric-Essentials-Workshop/blob/main/AzurePortal/1_MedallionArch/src/1_notebook_silver_to_gold.ipynb)) run against the `2020orders` and `products` tables end-to-end — the SQL/`Employees` path is only an alternative ingestion illustration and isn't used in Steps 3–6. Just fix the `abfss://` lakehouse paths to match your workspace.
 
+??? note "Optional — SQL source path (Azure SQL → Bronze)"
+
+    Do this only if you want to practice ingesting from a relational source. It's **independent** of the CSV path and uses a different dataset (`dbo.Employees`).
+
+    !!! warning "Cost"
+        Azure SQL Database is **not free**. Pick the **Serverless** compute tier (auto-pause) or **Basic** DTU tier to keep costs minimal, and delete the resource group when finished.
+
+    **Suggested names**
+
+    | Item | Name | Notes |
+    | --- | --- | --- |
+    | Resource group | `rg-fabric-essentials` | |
+    | SQL logical server | `sql-fabric-essentials-<unique>` | globally unique, lowercase |
+    | SQL database | `employees_db` | source DB |
+    | Ingestion pipeline (Fabric) | `sql_to_bronze` | if using a pipeline |
+    | Mirrored DB (Fabric) | `employees_mirrored` | if using mirroring |
+
+    **1 · Create the Azure SQL Database** (Azure Portal)
+
+    1. **Create resource → SQL Database**. Create a new **resource group** `rg-fabric-essentials`.
+    2. **Database name** `employees_db`. Under **Server**, create a new server named `sql-fabric-essentials-<unique>`, choose a region, and set **SQL authentication** with an admin login + password (note them).
+    3. **Compute + storage** → choose **Serverless** (General Purpose) or the **Basic** tier to minimise cost.
+    4. **Networking** tab → set **Connectivity** to **Public endpoint**, and enable **Allow Azure services…** plus **Add current client IP address** so you and Fabric can connect.
+    5. **Review + create**.
+
+    **2 · Create the sample table** (Query editor in the portal, or SSMS/Azure Data Studio)
+
+    ```sql
+    CREATE TABLE dbo.Employees (
+        EmployeeID INT PRIMARY KEY,
+        FirstName VARCHAR(50),
+        LastName VARCHAR(50),
+        BirthDate DATE,
+        HireDate DATE,
+        JobTitle VARCHAR(50),
+        Salary DECIMAL(10, 4)
+    );
+
+    INSERT INTO dbo.Employees (EmployeeID, FirstName, LastName, BirthDate, HireDate, JobTitle, Salary)
+    VALUES
+    (1, 'John', 'Doe', '1985-11-15', '2010-03-10', 'Software Engineer', 75000.0000),
+    (2, 'Jane', 'Smith', '1990-05-22', '2012-07-18', 'Project Manager', 85000.0000),
+    (3, 'Emily', 'Jones', '1988-04-17', '2014-06-25', 'Data Analyst', 65000.0000),
+    (4, 'Michael', 'Brown', '1982-06-21', '2008-09-15', 'HR Specialist', 55000.0000),
+    (5, 'Sarah', 'Davis', '1995-09-30', '2020-11-20', 'Marketing Specialist', 60000.0000);
+    ```
+
+    **3 · Ingest into Bronze** — do **one or both** (they use different target names, so they coexist and let you compare batch vs. near-real-time):
+
+    === "Pipeline (Copy activity)"
+
+        1. Fabric workspace → **New → Data pipeline**, name it `sql_to_bronze`.
+        2. On the pipeline canvas, choose **Copy data → Add to canvas** (or **Copy data assistant** for a guided wizard). This adds a **Copy activity**; select it, and on the **General** tab rename it from `Copy data1` to **`copy_employees`**. Configure its tabs below.
+        3. **Source** tab → **Data store type: External** → **Connection → New**:
+            - Connector: **Azure SQL Database**.
+            - **Server**: `sql-fabric-essentials-<unique>.database.windows.net` · **Database**: `employees_db`.
+            - **Authentication kind**: **Basic**, then enter the SQL admin **username/password** you set. **Create**.
+            - **Connection** now set → for **Use query** choose **Table**, and pick `dbo.Employees` (or use **Query** for a custom `SELECT`). Use **Preview data** to confirm rows load.
+        4. **Destination** tab → **Data store type: Workspace** → **Lakehouse** → select **`raw_Bronze`**:
+            - **Root folder: Tables** · **Table name**: `employees_pipeline` (Import schema → **Auto create table**).
+            - **Table action**: **Overwrite** — replaces contents each run so re-running stays idempotent (Append would duplicate the rows; Upsert needs a key column).
+        5. *(Optional)* **Mapping** tab → **Import schemas** to check column mappings (e.g. `Salary` → decimal).
+        6. **Save**, then **Run**. Watch the **Output** tab for status; on success, `employees_pipeline` appears under **Tables** in `raw_Bronze`. It's a one-off **batch copy** — re-run manually or attach a schedule to refresh.
+
+    === "Mirroring (auto-synced)"
+
+        !!! warning "Prerequisite — enable the server's managed identity"
+            Mirroring authenticates via the SQL **logical server's system-assigned managed identity (SAMI)**. If the wizard errors with *"turn on the system-assigned managed identity and set it as the primary identity"*: in the Azure Portal open the **SQL server** resource `sql-fabric-essentials-<unique>` — this is a **separate resource from the database** (type *"SQL server"*, not *"SQL database"*; the **Identity** blade is *not* on the database) → **Security → Identity**, set **System assigned managed identity → Status = On**, **Save**. If a user-assigned identity is also attached, ensure the **system-assigned** one is the **primary**. Wait ~1 minute, then retry. (This is unrelated to the serverless compute tier.)
+
+        1. Fabric workspace → **New → Mirrored Azure SQL Database**, name it `employees_mirrored`.
+        2. Connect to the Azure SQL server/database and select `dbo.Employees`.
+        3. Fabric creates a **new workspace item** (the mirrored database `employees_mirrored`, plus a paired SQL analytics endpoint and default semantic model) and replicates the data into OneLake as Delta. Wait until **Replication status = Running/Replicated**. This item is standalone — it does **not** land inside `raw_Bronze` by itself.
+        4. **Surface it in Bronze via a shortcut:**
+            1. Open the `raw_Bronze` lakehouse → hover the **Tables** folder → **⋯ → New shortcut**.
+            2. Under **Internal sources**, choose **Microsoft OneLake**.
+            3. On **Select a data source type**, pick the `employees_mirrored` item from the list → **Next**.
+            4. On the **Connection method** dialog, keep **Passthrough identity** (recommended — uses your own permissions) → **Connect**. (Use *Delegated identity* only to share one stored credential across users.)
+            5. Expand `employees_mirrored` → **Tables** → tick **`Employees`** → **Next**. On the **Preview shortcuts** screen, **edit the Shortcut Name** from `Employees` to **`employees_mirrored`** (so it sits distinctly next to the pipeline's `employees_pipeline` table) → **Create**.
+            6. The shortcut appears under **Tables** in `raw_Bronze` as `employees_mirrored`, pointing to the live mirrored data (no copy). You can also query the mirrored database directly in notebooks.
+
+    !!! tip "Run both to compare"
+        The two methods produce **different Fabric artifacts**, so you can implement both from the same `dbo.Employees` source with no conflict:
+
+        | Method | Artifact | Name |
+        | --- | --- | --- |
+        | Pipeline (Copy) | Delta **table in `raw_Bronze`** | `employees_pipeline` |
+        | Mirroring | Separate **mirrored database** (shortcut into Bronze) | `employees_mirrored` |
+
+        This gives you a **static copy** and a **live synced** version side by side — a nice batch-vs-streaming demo. Note both consume capacity/cost (the mirror keeps syncing), so pause or delete them when done.
+
+    !!! success "Expected result"
+        Both representations exist in Fabric: `employees_pipeline` (a batch-copied table in `raw_Bronze`) and `employees_mirrored` (a live-synced mirrored database, optionally shortcutted into Bronze). You can then apply the same Bronze → Silver → Gold pattern to either, adapting the notebook column names (`EmployeeID`, `JobTitle`, `Salary`, …).
+
 ## Bronze → Silver notebook (Step 3)
 
 Create a notebook, then **attach both lakehouses** in the Explorer pane: add **`raw_Bronze`** (keep it as the **default** — the 📌 pin) and **`cleansed_Silver`**. With both attached you can skip the `abfss://` URLs entirely — read from the default lakehouse with relative `Tables/…` paths and write to Silver with `saveAsTable("cleansed_Silver.<table>")`.
