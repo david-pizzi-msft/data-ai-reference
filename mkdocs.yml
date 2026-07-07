@@ -110,7 +110,10 @@ nav:
                   - 1 · Medallion Architecture: fabric/learning-journey/workshops/ms-fabric-essentials/medallion-architecture.md
                   - 2 · AI + LLMs: fabric/learning-journey/workshops/ms-fabric-essentials/ai-llms.md
                   - 3 · AI Skills: fabric/learning-journey/workshops/ms-fabric-essentials/ai-skills.md
-                  - 4 · CI/CD: fabric/learning-journey/workshops/ms-fabric-essentials/cicd.md
+                  - 4 · CI/CD:
+                      - fabric/learning-journey/workshops/ms-fabric-essentials/cicd/index.md
+                      - Deployment pipelines: fabric/learning-journey/workshops/ms-fabric-essentials/cicd/deployment-pipelines.md
+                      - GitHub integration: fabric/learning-journey/workshops/ms-fabric-essentials/cicd/github-integration.md
               - End-to-end tutorials in Fabric: fabric/learning-journey/workshops/end-to-end-tutorials.md
   - Fabric IQ:
       - fabric-iq/index.md

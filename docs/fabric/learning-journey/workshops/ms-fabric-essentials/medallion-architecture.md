@@ -5,6 +5,12 @@
 
 **Status:** ✅ Complete
 
+!!! note "Git integration in this repo"
+    The Medallion workspace is Git-connected, targeting the
+    `git/ms-fabric-essentials/medallion-architecture` folder in **this** repo (see `git/README.md`).
+    Committing from the workspace syncs its item definitions (lakehouses, notebooks, Data Factory
+    pipelines, semantic model, report) there to keep a trace.
+
 ## What this lab does
 
 Builds an end-to-end medallion pipeline in Microsoft Fabric — raw data lands in **Bronze**, gets cleaned in **Silver**, and is curated/aggregated in **Gold**, then surfaced to Power BI for reporting. Data moves between layers with notebooks (PySpark) and is orchestrated with Data Factory pipelines.
