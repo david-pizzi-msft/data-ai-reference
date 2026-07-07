@@ -1,1 +1,0 @@
-This is an auto-created file for /git/ms-fabric-essential/medallion-architecture
