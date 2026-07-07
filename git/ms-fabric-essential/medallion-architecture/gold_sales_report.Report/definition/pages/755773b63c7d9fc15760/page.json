@@ -1,0 +1,192 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "755773b63c7d9fc15760",
+  "displayName": "Page 1",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "autoPageGenerationConfig": {
+    "selectedFields": [
+      {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "products_gold"
+            }
+          },
+          "Property": "Category"
+        }
+      },
+      {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "products_gold"
+                }
+              },
+              "Property": "ListPrice"
+            }
+          },
+          "Function": 0
+        }
+      }
+    ],
+    "visualContainerConfigurations": [
+      {
+        "name": "24b3b0a76ee9448be785",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "products_gold"
+                }
+              },
+              "Property": "Category"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "products_gold"
+                    }
+                  },
+                  "Property": "ListPrice"
+                }
+              },
+              "Function": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "742b721571265bcd39ce",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "products_gold"
+                }
+              },
+              "Property": "Category"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "products_gold"
+                }
+              },
+              "Function": 2
+            }
+          }
+        ]
+      },
+      {
+        "name": "ed96e63269785b0e7a52",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "products_gold"
+                }
+              },
+              "Property": "ProductName"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "products_gold"
+                    }
+                  },
+                  "Property": "ListPrice"
+                }
+              },
+              "Function": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "2ea7835c45219c4b8c48",
+        "fields": []
+      },
+      {
+        "name": "340aba28b21e456852a5",
+        "fields": []
+      },
+      {
+        "name": "0ae3ce6ce2a61e589a99",
+        "fields": []
+      },
+      {
+        "name": "3ed9e74760e926b3a2d1",
+        "fields": []
+      },
+      {
+        "name": "8992f3644604422a1534",
+        "fields": []
+      },
+      {
+        "name": "f969d71a99cb256b41f8",
+        "fields": []
+      },
+      {
+        "name": "3588c91a885dc00369cc",
+        "fields": [
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "products_gold"
+                    }
+                  },
+                  "Property": "ListPrice"
+                }
+              },
+              "Function": 0
+            }
+          }
+        ]
+      },
+      {
+        "name": "486e90e5cb124c64bded",
+        "fields": [
+          {
+            "Aggregation": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "products_gold"
+                }
+              },
+              "Function": 2
+            }
+          }
+        ]
+      },
+      {
+        "name": "a4ace82479629d535c47",
+        "fields": []
+      }
+    ],
+    "layout": {
+      "related": {
+        "version": 1
+      }
+    }
+  }
+}
