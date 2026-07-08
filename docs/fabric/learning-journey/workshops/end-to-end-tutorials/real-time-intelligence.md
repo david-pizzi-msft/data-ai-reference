@@ -125,7 +125,10 @@ Reference of the Fabric technology used at each stage — handy when working out
 
 ## Notes
 
--
+!!! warning "Step 3 — \"Rule creation failed\" when saving the alert"
+    On clicking **Create** in the *Set alert* pane, a *"Rule creation failed — check your network connection or try refreshing the page"* toast appeared and the `TutorialActivator` item wasn't created.
+
+    **Fix (verified):** it was transient — **refreshing the page and clicking Create again** worked. The pane keeps the rule settings. If a refresh doesn't fix it, check the Reflex/Activator Entra app isn't blocked, the capacity isn't paused/throttled, and delete any half-created Activator item before retrying.
 
 ## Key takeaways
 
