@@ -1,0 +1,34 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Customer Dimension Data",
+  "queryGroups": [],
+  "documentLocale": "en-GB",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "bcff26b3-6a87-421b-a0a4-f40107d472da",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "dimension_customer": {
+      "queryId": "1b3d59f5-c591-4189-beda-b3ec9533b46f",
+      "queryName": "dimension_customer",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"f74c4a36-ae68-4498-9a5b-6ea960f363fe\",\"DatasourceId\":\"fd0ea2a3-23f7-412f-89e8-acf37e5eea67\"}"
+    },
+    {
+      "path": "https://raw.githubusercontent.com/microsoft/fabric-samples/refs/heads/main/docs-samples/data-engineering/dimension_customer.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"f74c4a36-ae68-4498-9a5b-6ea960f363fe\",\"DatasourceId\":\"d509bd5c-a298-49cd-a3cc-7ef4ca8af1ce\"}"
+    }
+  ]
+}
