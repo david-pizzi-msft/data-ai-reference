@@ -1,0 +1,246 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "51997e5ffc9541d9085c",
+  "displayName": "Page 1",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "autoPageGenerationConfig": {
+    "selectedFields": [
+      {
+        "Column": {
+          "Expression": {
+            "SourceRef": {
+              "Entity": "dimension_customer"
+            }
+          },
+          "Property": "BuyingGroup"
+        }
+      },
+      {
+        "Aggregation": {
+          "Expression": {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_customer"
+                }
+              },
+              "Property": "LineageKey"
+            }
+          },
+          "Function": 5
+        }
+      }
+    ],
+    "visualContainerConfigurations": [
+      {
+        "name": "1984a8c71f23fe3f9f88",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_customer"
+                }
+              },
+              "Property": "BuyingGroup"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_customer"
+                    }
+                  },
+                  "Property": "LineageKey"
+                }
+              },
+              "Function": 5
+            }
+          }
+        ]
+      },
+      {
+        "name": "7962d359845ec127d4c7",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_customer"
+                }
+              },
+              "Property": "BuyingGroup"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_customer"
+                    }
+                  },
+                  "Property": "PostalCode"
+                }
+              },
+              "Function": 2
+            }
+          }
+        ]
+      },
+      {
+        "name": "78fe4131b255d8ddc846",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_customer"
+                }
+              },
+              "Property": "BuyingGroup"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_customer"
+                }
+              },
+              "Function": 2
+            }
+          }
+        ]
+      },
+      {
+        "name": "28085b266b5402d11b1c",
+        "fields": [
+          {
+            "Column": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_customer"
+                }
+              },
+              "Property": "BillToCustomer"
+            }
+          },
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_customer"
+                    }
+                  },
+                  "Property": "LineageKey"
+                }
+              },
+              "Function": 5
+            }
+          }
+        ]
+      },
+      {
+        "name": "b3ab2b30ac774456ccd9",
+        "fields": []
+      },
+      {
+        "name": "86816864e6e20d253f7a",
+        "fields": []
+      },
+      {
+        "name": "2885cf067a52cc9783d1",
+        "fields": []
+      },
+      {
+        "name": "74f514836a5b32bf1645",
+        "fields": []
+      },
+      {
+        "name": "195c3beaba7b49c6ba1d",
+        "fields": []
+      },
+      {
+        "name": "62851d96060d58fe9f53",
+        "fields": []
+      },
+      {
+        "name": "c9fbc143a8895c5a0a0f",
+        "fields": []
+      },
+      {
+        "name": "54e76357fd58b70e0a56",
+        "fields": [
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_customer"
+                    }
+                  },
+                  "Property": "LineageKey"
+                }
+              },
+              "Function": 5
+            }
+          }
+        ]
+      },
+      {
+        "name": "3ef72fec06b5d5a8f69b",
+        "fields": [
+          {
+            "Aggregation": {
+              "Expression": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dimension_customer"
+                    }
+                  },
+                  "Property": "PostalCode"
+                }
+              },
+              "Function": 2
+            }
+          }
+        ]
+      },
+      {
+        "name": "10a7f7d1ba8ef9e6650a",
+        "fields": [
+          {
+            "Aggregation": {
+              "Expression": {
+                "SourceRef": {
+                  "Entity": "dimension_customer"
+                }
+              },
+              "Function": 2
+            }
+          }
+        ]
+      },
+      {
+        "name": "791ddd71b70b8c5d1349",
+        "fields": []
+      }
+    ],
+    "layout": {
+      "related": {
+        "version": 1
+      }
+    }
+  }
+}
