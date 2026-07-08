@@ -14,7 +14,3 @@ Use deployment pipelines together with Git integration to collaborate with other
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

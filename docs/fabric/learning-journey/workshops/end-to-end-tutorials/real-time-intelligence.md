@@ -14,7 +14,3 @@ Use the streaming and query capabilities of Real-Time Intelligence to analyze Lo
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

@@ -14,7 +14,3 @@ Designed for customers new to Fabric Activator. Using a sample eventstream, lear
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

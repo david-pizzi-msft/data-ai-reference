@@ -19,7 +19,3 @@
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

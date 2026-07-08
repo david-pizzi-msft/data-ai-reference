@@ -16,6 +16,14 @@ links) fail the build.
   reference material, not long-form prose.
 - For an unfinished page, use the stub line `` `Placeholder — add your notes here.` ``.
 
+## Workshop / lab log pages
+
+Pages under `docs/fabric/learning-journey/workshops/` are a personal working log. Use only
+these trailing sections — a `## Notes` section (running observations) and a `## Key takeaways`
+section (populated once the lab is done). Do **not** add a `## Follow-ups` section; it was
+never used and has been removed.
+
+
 ## After adding or renaming a page
 
 - Add it to the `nav` tree in `mkdocs.yml` — unlisted pages don't appear in navigation and

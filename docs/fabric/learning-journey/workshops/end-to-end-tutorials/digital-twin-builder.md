@@ -14,7 +14,3 @@ Model and contextualize data from multiple sources into a digital twin builder (
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

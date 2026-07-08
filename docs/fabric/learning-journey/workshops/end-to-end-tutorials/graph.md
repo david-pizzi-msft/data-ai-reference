@@ -14,7 +14,3 @@ Load sample data into a lakehouse and build a graph model with nodes and edges. 
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

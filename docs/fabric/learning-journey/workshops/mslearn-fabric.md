@@ -14,7 +14,3 @@ Microsoft Learn hands-on exercises for Microsoft Fabric (including Fabric IQ).
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

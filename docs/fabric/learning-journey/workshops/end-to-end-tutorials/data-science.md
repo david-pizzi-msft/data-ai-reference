@@ -14,7 +14,3 @@ Explore, clean, and transform a taxicab trip semantic model, and build a machine
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

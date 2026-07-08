@@ -14,7 +14,3 @@ Build a machine learning model to analyze and visualize avocado prices in the US
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

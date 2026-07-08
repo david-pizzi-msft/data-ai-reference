@@ -14,7 +14,3 @@ Build a dataflow and pipeline to bring data into a lakehouse, create a dimension
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

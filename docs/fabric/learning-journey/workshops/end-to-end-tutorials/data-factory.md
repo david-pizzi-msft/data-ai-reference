@@ -14,7 +14,3 @@ Ingest data with pipelines and transform data with dataflows, then use automatio
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

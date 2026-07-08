@@ -13,7 +13,7 @@ Span multiple Fabric experiences.
 
 | Lab | Scenario | Status |
 | --- | --- | --- |
-| [Lakehouse](lakehouse.md) | Ingest, transform, and load Wide World Importers retail data into a lakehouse and analyze sales. | ⬜ Not started |
+| [Lakehouse](lakehouse.md) | Ingest, transform, and load Wide World Importers retail data into a lakehouse and analyze sales. | ✅ Complete |
 | [Data Science](data-science.md) | Explore, clean, and transform a taxicab semantic model, then build an ML model to predict trip duration at scale. | ⬜ Not started |
 | [Real-Time Intelligence](real-time-intelligence.md) | Stream, transform, and query London bike-share data, then build a Real-Time Dashboard and Power BI report. | ⬜ Not started |
 | [Digital twin builder in RTI](digital-twin-builder-rti.md) | Contextualize streamed sample data with a digital twin builder, project to Eventhouse, and visualize in a dashboard. | ⬜ Not started |

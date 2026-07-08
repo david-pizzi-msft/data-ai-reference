@@ -14,7 +14,3 @@ Build an end-to-end data warehouse for the fictional Wide World Importers compan
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

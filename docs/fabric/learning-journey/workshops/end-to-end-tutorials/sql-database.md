@@ -14,7 +14,3 @@ A comprehensive guide to using the SQL database in Fabric — database creation,
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

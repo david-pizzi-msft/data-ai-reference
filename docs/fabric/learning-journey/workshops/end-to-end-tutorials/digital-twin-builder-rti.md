@@ -14,7 +14,3 @@ Set up a digital twin builder (preview) item and use it to contextualize sample 
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--

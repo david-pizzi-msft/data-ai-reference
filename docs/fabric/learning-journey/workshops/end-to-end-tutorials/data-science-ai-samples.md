@@ -14,7 +14,3 @@ A set of tutorials covering the different Data Science experience capabilities a
 ## Key takeaways
 
 -
-
-## Follow-ups
-
--
