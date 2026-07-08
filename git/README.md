@@ -15,3 +15,4 @@ Each Git-connected workspace maps to its own subfolder, grouped by workshop.
 | --- | --- | --- |
 | `ms-fabric-essentials/medallion-architecture` | `/git/ms-fabric-essentials/medallion-architecture` | [1_MedallionArch](https://github.com/Cloud2BR-MSFTLearningHub/MS-Fabric-Essentials-Workshop/tree/main/AzurePortal/1_MedallionArch) |
 | `ms-fabric-essentials/deployment-pipelines` | `/git/ms-fabric-essentials/deployment-pipelines` | [4_CICD/0_deployment-pipelines](https://github.com/Cloud2BR-MSFTLearningHub/MS-Fabric-Essentials-Workshop/tree/main/AzurePortal/4_CICD/0_deployment-pipelines) |
+| `end-to-end/lakehouse` | `/git/end-to-end/lakehouse` | [Lakehouse end-to-end tutorial](https://learn.microsoft.com/en-us/fabric/data-engineering/tutorial-lakehouse-introduction) |

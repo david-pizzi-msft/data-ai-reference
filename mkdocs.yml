@@ -114,7 +114,24 @@ nav:
                       - fabric/learning-journey/workshops/ms-fabric-essentials/cicd/index.md
                       - Deployment pipelines: fabric/learning-journey/workshops/ms-fabric-essentials/cicd/deployment-pipelines.md
                       - GitHub integration: fabric/learning-journey/workshops/ms-fabric-essentials/cicd/github-integration.md
-              - End-to-end tutorials in Fabric: fabric/learning-journey/workshops/end-to-end-tutorials.md
+              - End-to-end tutorials in Fabric:
+                  - fabric/learning-journey/workshops/end-to-end-tutorials/index.md
+                  - Multi-experience:
+                      - Lakehouse: fabric/learning-journey/workshops/end-to-end-tutorials/lakehouse.md
+                      - Data Science: fabric/learning-journey/workshops/end-to-end-tutorials/data-science.md
+                      - Real-Time Intelligence: fabric/learning-journey/workshops/end-to-end-tutorials/real-time-intelligence.md
+                      - Digital twin builder in RTI: fabric/learning-journey/workshops/end-to-end-tutorials/digital-twin-builder-rti.md
+                      - Data warehouse: fabric/learning-journey/workshops/end-to-end-tutorials/data-warehouse.md
+                      - Fabric SQL database: fabric/learning-journey/workshops/end-to-end-tutorials/sql-database.md
+                      - Fabric Activator: fabric/learning-journey/workshops/end-to-end-tutorials/activator.md
+                  - Experience-specific:
+                      - Power BI: fabric/learning-journey/workshops/end-to-end-tutorials/power-bi.md
+                      - Data Factory: fabric/learning-journey/workshops/end-to-end-tutorials/data-factory.md
+                      - Data Science AI samples: fabric/learning-journey/workshops/end-to-end-tutorials/data-science-ai-samples.md
+                      - Price prediction with R: fabric/learning-journey/workshops/end-to-end-tutorials/price-prediction-r.md
+                      - Application lifecycle management: fabric/learning-journey/workshops/end-to-end-tutorials/application-lifecycle-management.md
+                      - Digital twin builder: fabric/learning-journey/workshops/end-to-end-tutorials/digital-twin-builder.md
+                      - Graph in Fabric: fabric/learning-journey/workshops/end-to-end-tutorials/graph.md
   - Fabric IQ:
       - fabric-iq/index.md
       - Documentation:
