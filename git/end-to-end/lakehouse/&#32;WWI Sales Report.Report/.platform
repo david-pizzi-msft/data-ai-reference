@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": " WWI Sales Report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1c269848-6653-b63d-4eaf-1e31622916a1"
+  }
+}
