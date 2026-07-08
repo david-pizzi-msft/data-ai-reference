@@ -6,11 +6,20 @@
 
 **Status:** 🟡 In progress · **Started:** 2026-07-08
 
+!!! note "Git integration in this repo"
+    The Real-Time Intelligence workspace is Git-connected, targeting the `git/end-to-end/real-time-intelligence` folder in
+    **this** repo (see `git/README.md`). Committing from the workspace syncs its item definitions
+    (eventhouse, KQL database, eventstream, KQL queryset, Real-Time Dashboard, Activator) there to keep a trace.
+
 !!! info "Scope"
     This is a foundational walkthrough of how the RTI experiences fit together (streaming ingest → store → query → visualize → act). It is *not* a reference architecture, an exhaustive feature list, or a set of best-practice recommendations.
 
-!!! warning "Preview features must be enabled first"
-    The **maps** and **anomaly detector** steps (8 and 7) depend on preview settings the **tenant admin** must switch on in the admin portal. Enable them before starting so the later steps work.
+!!! warning "Tenant settings the admin may need to enable first"
+    The intro tutorial page still says to enable a **maps preview** setting, but that's out of date — **Maps is now GA**. Settings to check in **Admin portal → Tenant settings**:
+
+    - **Users can use Azure Maps services** — required for the Map step (step 8).
+    - **Data sent to Azure Maps can be processed outside your capacity's geographic region…** — only enable if the Fabric capacity is **outside EU/US**.
+    - **Detect anomalies in Real-Time Intelligence (Preview)** — required for anomaly detection (step 7).
 
 ## Why Real-Time Intelligence?
 
@@ -111,7 +120,7 @@ Reference of the Fabric technology used at each stage — handy when working out
 | 5 · Query data | **KQL queryset** + **Copilot** | Kusto Query Language (T-SQL also) | Author queries over streamed data; Copilot can draft KQL from natural language. |
 | 6 · Real-Time dashboard | **Real-Time Dashboard** | KQL-backed tiles | Tiles from KQL queries; parameters, auto-refresh, and Copilot-assisted exploration. |
 | 7 · Anomaly detection | **Eventhouse** (anomaly detection, preview) | Time-series ML in KQL | Runs in place over the time-series table — no data movement. Requires the anomaly-detector preview setting. |
-| 8 · Create a map | **Map** (preview) | Geospatial visualization | Plots bike locations from lat/long; supports bubbles/heatmaps and KQL-driven refresh. Requires the maps preview setting. |
+| 8 · Create a map | **Map** (GA) | Geospatial visualization | Plots bike locations from lat/long; supports bubbles/heatmaps and KQL-driven refresh. Only needs the **Azure Maps services** cross-region tenant setting if your capacity is outside EU/US. |
 | 9 · Clean up | **Workspace** | — | Delete the workspace and all items to release capacity. |
 
 ## Notes
