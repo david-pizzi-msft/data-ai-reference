@@ -130,8 +130,48 @@ Reference of the Fabric technology used at each stage — handy when working out
 
     **Fix (verified):** it was transient — **refreshing the page and clicking Create again** worked. The pane keeps the rule settings. If a refresh doesn't fix it, check the Reflex/Activator Entra app isn't blocked, the capacity isn't paused/throttled, and delete any half-created Activator item before retrying.
 
+!!! warning "Pausing the capacity stops the eventstream — reactivate on resume"
+    Pausing the Fabric capacity (e.g. overnight to save cost) **stops all running workloads**, including the eventstream. On **resume**, the eventstream stays stopped — its nodes show **Inactive** — so no new data flows into `RawData`.
+
+    **Symptom:** in step 4, `TransformedData` stays empty (update policies are **forward-only** — they only transform data ingested *after* the policy exists, so no new ingest = no transformed rows). The eventstream editor's **Data preview** still shows rows, but that only *samples* the source — it is **not** live ingestion.
+
+    **Fix (verified):** open the eventstream and click **Activate all** in the toolbar (Publish first if there are draft changes); wait for nodes to turn **Active**. Confirm ingestion resumed with `RawData | count` run twice a few seconds apart — the count should increase — then `TransformedData | take 10` fills.
+
+    **Notes:** the Eventhouse tables and earlier rows persist across pause/resume (you just get a gap for the paused window). The Activator alert, dashboard, and anomaly detection all need the capacity **running**.
+
+!!! tip "Step 5 — timechart unreadable after a pause gap? Restrict the time window"
+    The step 5 query renders a timechart of `No_Bikes`:
+
+    ```kusto
+    TransformedData
+    | where BikepointID > 100 and Neighbourhood == "Chelsea"
+    | project Timestamp, No_Bikes
+    | render timechart
+    ```
+
+    After a pause/resume, the X axis spans the whole idle gap, so all the recent points get crushed into a single spike on the right and you can't read anything. Add a **time filter** so the chart only covers live data:
+
+    ```kusto
+    TransformedData
+    | where Timestamp > ago(30m)
+    | where BikepointID > 100 and Neighbourhood == "Chelsea"
+    | project Timestamp, No_Bikes
+    | render timechart
+    ```
+
+    Tune `ago(30m)` to just cover the period since you reactivated the stream. In a **Real-Time Dashboard**, prefer the tile's built-in **time range** picker instead of hard-coding `ago()`.
+
+!!! warning "Step 6 — UI drift: \"Add visual\" now asks for the visual type up front"
+    The lab says to run the query, then *"select the expand button in the **Visualization** pane to see all options."* The current editor instead shows the **visual-type picker immediately** when you click **Add visual** (Time Series, Bar, Column, Pie, Table, Area, Line, Scatter, Anomaly, **Map**…).
+
+    - For the "Add a new tile by using a query" step, the tile is the **Bike locations Map** — **scroll down past *Anomaly chart* and pick *Map***, then set *Define location by* = Latitude and longitude, *Latitude* = `Latitude`, *Longitude* = `Longitude`, *Label* = `BikepointID`.
+    - Tiles **default to a Table** if you don't choose a type, so you must actively select **Map**.
+    - Doc inconsistency: the later *Set an alert* step calls it "the new **bar chart** tile," but the tile is the **Map**. Set the alert on the **Bike locations Map** tile — the alert config is the same regardless of visual type.
+
 ## Key takeaways
 
--
+- **Medallion architecture lives *inside* the Eventhouse.** The tutorial layers the data by tier, even though the lab never spells it out: 🥉 **Bronze** = `RawData` (raw ingested table) → 🥈 **Silver** = `TransformedData` (cleaned/enriched table populated by an **update policy**) → 🥇 **Gold** = `AggregatedData` (a **materialized view** with business-ready aggregates). A materialized view is the natural Gold shape for aggregations because it stays current automatically and is cheap to query — ideal for feeding dashboards/reports (Part 6 reuses it). The `with (folder="Bronze|Silver|Gold")` is just an **organizational label**, not an enforced policy. See [Implement a medallion architecture in RTI](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/architecture-medallion).
+- **The KQL queryset runs T-SQL too — and `explain` converts SQL → KQL.** You can query Eventhouse tables with **T-SQL** directly (e.g. `SELECT top(10) * FROM AggregatedData ORDER BY No_Bikes DESC`), which eases the ramp from a SQL background. Prefix any T-SQL `SELECT` with **`explain`** to get the equivalent **KQL** emitted in the results pane — a fast way to *learn* KQL by translating queries you already know. The generated KQL is functionally equivalent but not necessarily optimized, so treat it as a starting point.
+- **Copilot drafts KQL from natural language.** The queryset's **Copilot** turns a plain-English question (e.g. *"What is the average number of bikes at each bike point?"*) into a runnable KQL query you **Insert** then **Run**. Naming the target object in the prompt (e.g. *"use the AggregatedData materialized view"*) yields a more accurate query, and follow-up questions refine scope — useful both to move fast and to learn KQL patterns. Still review the output before trusting it.
 
 *Curated from [Microsoft Learn](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/tutorial-introduction) · Updated 2025-10-21*
