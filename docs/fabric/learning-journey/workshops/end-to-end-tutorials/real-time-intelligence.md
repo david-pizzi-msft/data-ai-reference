@@ -4,7 +4,7 @@
 
 **Real-Time Intelligence (RTI)** is Fabric's end-to-end solution for data *in motion* — event-driven scenarios, streaming ingestion, and log analytics. In this tutorial you stream a live **London bike-share** feed, land it in an Eventhouse, transform and query it with **KQL**, then act on it with alerts, a Real-Time Dashboard, anomaly detection, and a geospatial map.
 
-**Status:** 🟡 In progress · **Started:** 2026-07-08
+**Status:** ✅ Complete · **Started:** 2026-07-08 · **Completed:** 2026-07-09
 
 !!! note "Git integration in this repo"
     The Real-Time Intelligence workspace is Git-connected, targeting the `git/end-to-end/real-time-intelligence` folder in
