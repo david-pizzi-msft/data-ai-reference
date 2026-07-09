@@ -1,0 +1,65 @@
+{
+  "$id": "https://developer.microsoft.com/json-schemas/fabric/item/anomalyDetector/definition/1.0.0/schema.json",
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "univariateConfigurations": [
+    {
+      "configurationId": "342948ae-3ca9-4ea4-978f-332103cc1784",
+      "configurationName": "New configuration 1",
+      "fabricDataSource": {
+        "dataSourceType": "KqlDb",
+        "tableName": "TransformedData",
+        "timestampColumnName": "Timestamp",
+        "instanceIDColumnName": "Street",
+        "attributeColumnName": "No_Bikes",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactId": "8e909dcf-c222-a643-4312-c14edc8715e6"
+      },
+      "modelOption": {
+        "analysisCompletedAt": "2026-07-09T15:03:19.7697176+00:00",
+        "modelSelection": {
+          "modelAlgorithm": "MEDIAN_DISTANCE_SCORE_ADVANCED",
+          "modelVersion": "1.0",
+          "modelName": "Seasonal Outlier Finder",
+          "modelDescription": "Adds awareness of recurring patterns \u2014 like monthly billing cycles or seasonal demand \u2014 to help spot true outliers in datasets like financial or operational data."
+        },
+        "parameters": [
+          {
+            "$type": "String",
+            "value": "daily",
+            "name": "Granularity"
+          },
+          {
+            "$type": "String",
+            "value": "auto",
+            "name": "ImputeMode"
+          },
+          {
+            "$type": "Float",
+            "value": 0.9,
+            "name": "MaxAnomalyRatio"
+          },
+          {
+            "$type": "Integer",
+            "value": 0,
+            "name": "Periodicity"
+          },
+          {
+            "$type": "Integer",
+            "value": 0,
+            "name": "Regularization"
+          },
+          {
+            "$type": "Integer",
+            "value": 45,
+            "name": "Sensitivity"
+          }
+        ]
+      },
+      "analysisRequestId": "fa158490-3146-462d-bd90-19fc6b05a92a",
+      "detectionSettings": {
+        "confidence": 50,
+        "autoPublish": false
+      }
+    }
+  ]
+}

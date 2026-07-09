@@ -1,0 +1,339 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/map/definition/2.0.0/schema.json",
+  "basemap": {},
+  "dataSources": [
+    {
+      "itemType": "Lakehouse",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "577f6f8f-4fa5-82b9-4f5f-3074773444e1"
+    },
+    {
+      "itemType": "KqlDatabase",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "8e909dcf-c222-a643-4312-c14edc8715e6"
+    }
+  ],
+  "iconSources": [],
+  "layerSources": [
+    {
+      "id": "b848a7d2-23c7-428c-b557-ad287be259d4",
+      "name": "BikeLatLong",
+      "type": "kusto",
+      "itemId": "8e909dcf-c222-a643-4312-c14edc8715e6",
+      "refreshIntervalMs": 300000
+    },
+    {
+      "id": "bb1d6ff9-c332-4eae-858f-8ef934db9c33",
+      "name": "buckingham-palace-road",
+      "type": "geojson",
+      "itemId": "577f6f8f-4fa5-82b9-4f5f-3074773444e1",
+      "relativePath": "Files/buckingham-palace-road.geojson",
+      "refreshIntervalMs": 0
+    },
+    {
+      "id": "cfd667f8-395a-4470-b382-6c628e75aedc",
+      "name": "london-boroughs",
+      "type": "geojson",
+      "itemId": "577f6f8f-4fa5-82b9-4f5f-3074773444e1",
+      "relativePath": "Files/london-boroughs.geojson",
+      "refreshIntervalMs": 0
+    }
+  ],
+  "layerSettings": [
+    {
+      "id": "13fe8921-15e3-4fd6-9ac5-c0b1dd16dfe4",
+      "name": "BikeLatLong",
+      "sourceId": "b848a7d2-23c7-428c-b557-ad287be259d4",
+      "options": {
+        "color": "#B146C2",
+        "type": "vector",
+        "visible": true,
+        "tooltipKeys": [
+          "Street",
+          "Neighbourhood"
+        ],
+        "bubbleOptions": {
+          "enableSeriesGroup": true,
+          "color": [
+            "match",
+            [
+              "to-string",
+              [
+                "get",
+                "sum_No_Empty_Docks"
+              ]
+            ],
+            "1052",
+            "#732630",
+            "1395",
+            "#7f2833",
+            "1984",
+            "#8a2935",
+            "2330",
+            "#962b38",
+            "2701",
+            "#a22c3a",
+            "3558",
+            "#ae2e3d",
+            "3676",
+            "#b92f3f",
+            "4688",
+            "#c53142",
+            "4809",
+            "#d13244",
+            "4828",
+            "#dd3447",
+            "5068",
+            "#e83549",
+            "5113",
+            "#F4374C",
+            "5310",
+            "#f53a4a",
+            "5436",
+            "#f63e48",
+            "5456",
+            "#f74147",
+            "5515",
+            "#f84445",
+            "5779",
+            "#f94843",
+            "6127",
+            "#fa4b41",
+            "6606",
+            "#fb4f3f",
+            "6614",
+            "#fc523d",
+            "6885",
+            "#fd553c",
+            "7090",
+            "#fe593a",
+            "7594",
+            "#FF5C38",
+            "8157",
+            "#ff6433",
+            "8944",
+            "#ff6d2e",
+            "9172",
+            "#ff752a",
+            "9251",
+            "#ff7e25",
+            "9815",
+            "#ff8620",
+            "9933",
+            "#fe8f1b",
+            "10147",
+            "#fe9716",
+            "10201",
+            "#fea011",
+            "10203",
+            "#fea80d",
+            "10238",
+            "#feb108",
+            "10269",
+            "#FEB903",
+            "10538",
+            "#febd11",
+            "10717",
+            "#fec11e",
+            "10947",
+            "#fec42c",
+            "11052",
+            "#fec83a",
+            "11224",
+            "#fecc47",
+            "11393",
+            "#ffd055",
+            "11514",
+            "#ffd462",
+            "11543",
+            "#ffd870",
+            "11728",
+            "#ffdb7e",
+            "12372",
+            "#ffdf8b",
+            "13015",
+            "#FFE399",
+            "13143",
+            "#fbe498",
+            "13477",
+            "#f7e597",
+            "13980",
+            "#f4e596",
+            "13990",
+            "#f0e695",
+            "13998",
+            "#ece794",
+            "14069",
+            "#e8e893",
+            "14222",
+            "#e4e992",
+            "14359",
+            "#e0ea91",
+            "14409",
+            "#ddea90",
+            "14787",
+            "#d9eb8f",
+            "14904",
+            "#D5EC8E",
+            "14980",
+            "#ceec8b",
+            "15556",
+            "#c8eb89",
+            "15690",
+            "#c1eb86",
+            "16159",
+            "#baeb83",
+            "16491",
+            "#b4eb80",
+            "16781",
+            "#adea7e",
+            "16887",
+            "#a7ea7b",
+            "17224",
+            "#a0ea78",
+            "17709",
+            "#99ea75",
+            "17863",
+            "#93e973",
+            "17889",
+            "#8CE970",
+            "18175",
+            "#86e676",
+            "18341",
+            "#80e27c",
+            "18627",
+            "#7adf82",
+            "19147",
+            "#74dc88",
+            "19566",
+            "#6ed98e",
+            "21148",
+            "#67d593",
+            "21597",
+            "#61d299",
+            "21864",
+            "#5bcf9f",
+            "22092",
+            "#55cca5",
+            "22505",
+            "#4fc8ab",
+            "22691",
+            "#49C5B1",
+            "23373",
+            "#45bbaa",
+            "23616",
+            "#42b2a3",
+            "23956",
+            "#3ea89b",
+            "24019",
+            "#3b9e94",
+            "24377",
+            "#37958d",
+            "24621",
+            "#348b86",
+            "25379",
+            "#30827f",
+            "25513",
+            "#2d7878",
+            "25668",
+            "#296e70",
+            "25702",
+            "#266569",
+            "25706",
+            "#225B62",
+            "26015",
+            "#205c5c",
+            "26392",
+            "#1d5d55",
+            "27359",
+            "#1b5d4f",
+            "28464",
+            "#185e49",
+            "28656",
+            "#165f43",
+            "30228",
+            "#13603c",
+            "30692",
+            "#116136",
+            "31462",
+            "#0e6230",
+            "33354",
+            "#0c622a",
+            "36069",
+            "#096323",
+            "40457",
+            "#07641D",
+            "#808080"
+          ],
+          "seriesGroup": "sum_No_Empty_Docks",
+          "sizeType": "data-driven",
+          "sizeProperty": "sum_No_Empty_Docks"
+        },
+        "markerOptions": {
+          "fillColor": "#B146C2"
+        },
+        "lineOptions": {
+          "strokeColor": "#B146C2"
+        },
+        "polygonOptions": {
+          "fillColor": "#B146C2"
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#B146C2"
+        }
+      },
+      "latitudeColumnName": "Latitude",
+      "longitudeColumnName": "Longitude"
+    },
+    {
+      "id": "10dbfd1a-63cb-4409-9956-e34023b8401b",
+      "name": "buckingham-palace-road",
+      "sourceId": "bb1d6ff9-c332-4eae-858f-8ef934db9c33",
+      "options": {
+        "color": "#2AA0A4",
+        "type": "vector",
+        "visible": true,
+        "bubbleOptions": {
+          "color": "#2AA0A4"
+        },
+        "markerOptions": {
+          "fillColor": "#2AA0A4"
+        },
+        "lineOptions": {
+          "strokeColor": "#2AA0A4"
+        },
+        "polygonOptions": {
+          "fillColor": "#2AA0A4"
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#2AA0A4"
+        }
+      }
+    },
+    {
+      "id": "1b0c24a2-1cd6-416c-9031-bef100be75c4",
+      "name": "london-boroughs",
+      "sourceId": "cfd667f8-395a-4470-b382-6c628e75aedc",
+      "options": {
+        "color": "#B146C2",
+        "type": "vector",
+        "visible": true,
+        "bubbleOptions": {
+          "color": "#B146C2"
+        },
+        "markerOptions": {
+          "fillColor": "#B146C2"
+        },
+        "lineOptions": {
+          "strokeColor": "#B146C2"
+        },
+        "polygonOptions": {
+          "fillColor": "#B146C2"
+        },
+        "polygonExtrusionOptions": {
+          "fillColor": "#B146C2"
+        }
+      }
+    }
+  ]
+}

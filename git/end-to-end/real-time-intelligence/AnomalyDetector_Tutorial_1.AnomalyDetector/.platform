@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "AnomalyDetector",
+    "displayName": "AnomalyDetector_Tutorial_1"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c9a2240b-23da-8a06-43da-f4cbd727673d"
+  }
+}

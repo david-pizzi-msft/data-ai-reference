@@ -1,0 +1,154 @@
+[
+  {
+    "uniqueIdentifier": "ec379436-18e1-4a0f-892d-765d4d9c3b01",
+    "payload": {
+      "name": "TutorialDashboard",
+      "description": "Container Description",
+      "type": "kqlQueries"
+    },
+    "type": "container-v1"
+  },
+  {
+    "uniqueIdentifier": "ceab867f-aa43-4ca9-ab41-d6332168a1e3",
+    "payload": {
+      "name": "Tutorial event",
+      "runSettings": {
+        "executionIntervalInSeconds": 300
+      },
+      "query": {
+        "queryString": "AggregatedData\n| sort by BikepointID\n| render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)"
+      },
+      "eventhouseItem": {
+        "itemId": "8e909dcf-c222-a643-4312-c14edc8715e6",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemType": "KustoDatabase"
+      },
+      "queryParameters": [],
+      "metadata": {
+        "workspaceId": "e13613e7-d1d6-4b2e-a2b1-3345366e82b5",
+        "dashboardId": "b9bdb655-e7f0-488d-b1ff-7ba44c09d032",
+        "visualId": "aa87197f-6b5c-44fe-823f-6f628fd23bc9"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "ec379436-18e1-4a0f-892d-765d4d9c3b01"
+      }
+    },
+    "type": "kqlSource-v1"
+  },
+  {
+    "uniqueIdentifier": "f8d7fe18-c2d5-48af-8bd4-752c120cd84b",
+    "payload": {
+      "name": "Tutorial event",
+      "parentContainer": {
+        "targetUniqueIdentifier": "ec379436-18e1-4a0f-892d-765d4d9c3b01"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"steps\":[{\"id\":\"264a7849-26ff-4ffe-b39a-1bf5a7b99b4b\",\"name\":\"SourceEventStep\",\"rows\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"ceab867f-aa43-4ca9-ab41-d6332168a1e3\"}],\"kind\":\"SourceReference\",\"name\":\"SourceSelector\"}]}],\"templateId\":\"SourceEvent\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "77c4dbb0-24a8-4f99-aa1b-61c6014e2ca5",
+    "payload": {
+      "name": "No_Bikes",
+      "parentContainer": {
+        "targetUniqueIdentifier": "ec379436-18e1-4a0f-892d-765d4d9c3b01"
+      },
+      "definition": {
+        "type": "Object"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "0116953d-3ba4-4cf2-8520-3347684c7918",
+    "payload": {
+      "name": "No_Bikes",
+      "parentObject": {
+        "targetUniqueIdentifier": "77c4dbb0-24a8-4f99-aa1b-61c6014e2ca5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "ec379436-18e1-4a0f-892d-765d4d9c3b01"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"06eb653e-334f-4856-8176-6900362e2499\",\"name\":\"IdPartStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"IdentityPartAttribute\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "bcdeee59-c9e4-4c51-b269-045d7834b755",
+    "payload": {
+      "name": "No_Bikes",
+      "parentObject": {
+        "targetUniqueIdentifier": "77c4dbb0-24a8-4f99-aa1b-61c6014e2ca5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "ec379436-18e1-4a0f-892d-765d4d9c3b01"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"32ccfcd4-6078-461e-a9f1-c0354e3b869c\",\"name\":\"IdStructureStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0116953d-3ba4-4cf2-8520-3347684c7918\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"IdPart\",\"name\":\"IdPart\"}]}],\"templateId\":\"IdentityTupleAttribute\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "4aa05a50-1444-4eea-b7eb-d081cfa7fef2",
+    "payload": {
+      "name": "Tutorial event",
+      "parentObject": {
+        "targetUniqueIdentifier": "77c4dbb0-24a8-4f99-aa1b-61c6014e2ca5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "ec379436-18e1-4a0f-892d-765d4d9c3b01"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"steps\":[{\"id\":\"2d27c13c-fd4b-4fc6-88af-8957eb955623\",\"name\":\"SplitEventStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"f8d7fe18-c2d5-48af-8bd4-752c120cd84b\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"No_Bikes\"},{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0116953d-3ba4-4cf2-8520-3347684c7918\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"FieldIdMapping\",\"name\":\"FieldIdMapping\"},{\"arguments\":[{\"name\":\"isAuthoritative\",\"type\":\"boolean\",\"value\":true}],\"kind\":\"EventOptions\",\"name\":\"SplitEventOptions\"}]}],\"templateId\":\"SplitEvent\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "4332c06f-b543-4552-8ed5-a851e99f187d",
+    "payload": {
+      "name": "BikepointID",
+      "parentObject": {
+        "targetUniqueIdentifier": "77c4dbb0-24a8-4f99-aa1b-61c6014e2ca5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "ec379436-18e1-4a0f-892d-765d4d9c3b01"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"7aaa2a05-9b89-4ac7-8a00-a948c0adb632\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"4aa05a50-1444-4eea-b7eb-d081cfa7fef2\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"BikepointID\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"b5c70857-eb64-4a09-abf0-f3c5a90c4121\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "1dc68412-3230-49ce-9fdf-8c49f463a27d",
+    "payload": {
+      "name": "High Bike Count Alert",
+      "parentObject": {
+        "targetUniqueIdentifier": "77c4dbb0-24a8-4f99-aa1b-61c6014e2ca5"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "ec379436-18e1-4a0f-892d-765d4d9c3b01"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.3.0\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"6bcd0b12-e103-48e0-b479-7cbe76dcec44\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"4332c06f-b543-4552-8ed5-a851e99f187d\"}],\"name\":\"attribute\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"2dbcbe02-bbd2-4b4e-afdb-d4c6f1ee8b15\",\"rows\":[{\"name\":\"NumberValueCondition\",\"kind\":\"NumberValueCondition\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"IsGreaterThan\"},{\"name\":\"threshold\",\"type\":\"number\",\"value\":30.0}]},{\"name\":\"OccurrenceOption\",\"kind\":\"EachTime\",\"arguments\":[]}]},{\"name\":\"ActStep\",\"id\":\"5bf382ed-7eaa-498d-9fcb-e33259adb39f\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"en-us\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"fabric@davidpizzihotmail.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Activator alert High Bike Count Alert\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"The condition for 'High Bike Count Alert' has been met\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  }
+]

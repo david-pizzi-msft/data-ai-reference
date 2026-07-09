@@ -10,6 +10,12 @@ RawData
 | extend BikesToBeFilled = No_Empty_Docks - No_Bikes
 | extend Action = iff(BikesToBeFilled > 0, tostring(BikesToBeFilled), "NA")
  }
+.create-or-alter function with (skipvalidation = "true") funcForMap() {
+    TransformedData
+    | where ingestion_time() > ago(30d)
+    | project Street, Neighbourhood, toreal(Latitude), toreal(Longitude), No_Bikes, No_Empty_Docks
+    | summarize sum(No_Bikes), sum(No_Empty_Docks) by Street, Neighbourhood, Latitude, Longitude
+}
 .create-or-alter materialized-view with (Folder = "Gold")  AggregatedData on table TransformedData { TransformedData
    | summarize arg_max(Timestamp,No_Bikes) by BikepointID }
 .alter table TransformedData policy update "[{\"IsEnabled\":true,\"Source\":\"RawData\",\"Query\":\"TransformRawData()\",\"IsTransactional\":false,\"PropagateIngestionProperties\":false,\"ManagedIdentity\":null}]"

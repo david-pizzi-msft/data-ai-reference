@@ -1,0 +1,142 @@
+{
+  "schema_version": 76,
+  "tiles": [
+    {
+      "id": "aa87197f-6b5c-44fe-823f-6f628fd23bc9",
+      "title": "New Tile",
+      "hideTitle": true,
+      "visualType": "column",
+      "pageId": "28d29ad7-b5d4-4bae-ba6d-683c9d5e522f",
+      "layout": {
+        "x": 0,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "41fa0627-9607-47d4-95bc-66a26e8d9a33"
+      },
+      "visualOptions": {
+        "xColumn": "BikepointID",
+        "multipleYAxes": {
+          "additional": [],
+          "showMultiplePanels": false,
+          "base": {
+            "horizontalLines": [],
+            "yAxisScale": "linear",
+            "yAxisMaximumValue": null,
+            "yAxisMinimumValue": null,
+            "columns": [],
+            "label": "",
+            "id": "-1"
+          }
+        },
+        "yColumns": [
+          "No_Bikes"
+        ],
+        "seriesColumns": null,
+        "anomalyColumns": null,
+        "map__longitudeColumn": "BikepointID",
+        "map__latitudeColumn": "No_Bikes",
+        "seriesColors": {},
+        "hideLegend": false,
+        "legendLocation": "bottom",
+        "xColumnTitle": "",
+        "xAxisScale": "linear",
+        "verticalLine": "",
+        "crossFilter": [],
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "forceAxisTicks": false,
+        "drillthrough": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "b06de169-11ac-456d-8557-9d7b9bef2a26",
+      "title": "Bike locations Map",
+      "visualType": "map",
+      "pageId": "28d29ad7-b5d4-4bae-ba6d-683c9d5e522f",
+      "layout": {
+        "x": 9,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "30618a1f-2fd8-4533-ae44-0df8bd1119c4"
+      },
+      "visualOptions": {
+        "map__latitudeColumn": "Latitude",
+        "map__longitudeColumn": "Longitude",
+        "map__labelColumn": "BikepointID",
+        "map__sizeColumn": null,
+        "map__sizeDisabled": true,
+        "map__geoType": "numeric",
+        "map__geoPointColumn": null
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "18f91421-0068-4ba3-94f0-8e4e98ff2a6f",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "e0a52054-e4cd-4c2e-b5e5-e662e27e2e78",
+      "kind": "kusto-trident",
+      "name": "Tutorial",
+      "clusterUri": "",
+      "databaseArtifactId": "dc8715e6-c14e-4312-a643-c2228e909dcf",
+      "database": "8e909dcf-c222-a643-4312-c14edc8715e6",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "28d29ad7-b5d4-4bae-ba6d-683c9d5e522f"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "e0a52054-e4cd-4c2e-b5e5-e662e27e2e78"
+      },
+      "text": "AggregatedData\n| sort by BikepointID\n| render columnchart with (ycolumns=No_Bikes,xcolumn=BikepointID)",
+      "id": "41fa0627-9607-47d4-95bc-66a26e8d9a33",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "e0a52054-e4cd-4c2e-b5e5-e662e27e2e78"
+      },
+      "text": "RawData\r\n| where Timestamp > ago(1h)",
+      "id": "30618a1f-2fd8-4533-ae44-0df8bd1119c4",
+      "usedVariables": []
+    }
+  ],
+  "embeddedApps": []
+}
