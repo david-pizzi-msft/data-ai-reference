@@ -1,0 +1,179 @@
+[
+  {
+    "uniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f",
+    "payload": {
+      "name": "TutorialEventstream",
+      "description": "Container Description",
+      "type": "eventstreams"
+    },
+    "type": "container-v1"
+  },
+  {
+    "uniqueIdentifier": "b8cc836a-2193-5adf-961b-87e2055a4b11",
+    "payload": {
+      "name": "TutorialEventstream-stream event",
+      "metadata": {
+        "eventstreamArtifactId": "b66946c1-7f3f-4407-a084-805bcddf836b",
+        "eventTypes": [
+          {
+            "name": "TutorialEventstream"
+          }
+        ]
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f"
+      }
+    },
+    "type": "eventstreamSource-v1"
+  },
+  {
+    "uniqueIdentifier": "2252f3c9-3cf1-470c-8041-70ab429b332f",
+    "payload": {
+      "name": "TutorialEventstream-stream event",
+      "parentContainer": {
+        "targetUniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"steps\":[{\"id\":\"b27089b4-3c4d-47bc-b98b-700542e738de\",\"name\":\"SourceEventStep\",\"rows\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"b8cc836a-2193-5adf-961b-87e2055a4b11\"}],\"kind\":\"SourceReference\",\"name\":\"SourceSelector\"}]}],\"templateId\":\"SourceEvent\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "c114666b-db9c-4f0e-b29e-7becb1ed814b",
+    "payload": {
+      "name": "BikepointID",
+      "parentContainer": {
+        "targetUniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f"
+      },
+      "definition": {
+        "type": "Object"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "1a62cf03-2257-4a84-bfdc-73657317d5d7",
+    "payload": {
+      "name": "BikepointID",
+      "parentObject": {
+        "targetUniqueIdentifier": "c114666b-db9c-4f0e-b29e-7becb1ed814b"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"94a39cef-01d0-4652-beba-e81e8a675b04\",\"name\":\"IdPartStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"IdentityPartAttribute\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "cc74a4ce-10c9-4a37-8903-45150bb9f9ac",
+    "payload": {
+      "name": "BikepointID",
+      "parentObject": {
+        "targetUniqueIdentifier": "c114666b-db9c-4f0e-b29e-7becb1ed814b"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"ebbd6206-961c-4632-8478-dbd32e2e0ac7\",\"name\":\"IdStructureStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"1a62cf03-2257-4a84-bfdc-73657317d5d7\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"IdPart\",\"name\":\"IdPart\"}]}],\"templateId\":\"IdentityTupleAttribute\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "e9732da8-d862-4589-8e3f-6f09ce3aa9d7",
+    "payload": {
+      "name": "TutorialEventstream-stream event",
+      "parentObject": {
+        "targetUniqueIdentifier": "c114666b-db9c-4f0e-b29e-7becb1ed814b"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"steps\":[{\"id\":\"4f117654-8032-44ad-9f3c-48196d6cab93\",\"name\":\"SplitEventStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"2252f3c9-3cf1-470c-8041-70ab429b332f\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"BikepointID\"},{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"1a62cf03-2257-4a84-bfdc-73657317d5d7\"}],\"kind\":\"AttributeReference\",\"name\":\"idPart\",\"type\":\"complex\"}],\"kind\":\"FieldIdMapping\",\"name\":\"FieldIdMapping\"},{\"arguments\":[{\"name\":\"isAuthoritative\",\"type\":\"boolean\",\"value\":true}],\"kind\":\"EventOptions\",\"name\":\"SplitEventOptions\"}]}],\"templateId\":\"SplitEvent\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "b89b47c2-6774-4d0a-a030-a31d615f0c8c",
+    "payload": {
+      "name": "No_Bikes",
+      "parentObject": {
+        "targetUniqueIdentifier": "c114666b-db9c-4f0e-b29e-7becb1ed814b"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"4e27fff9-4da8-42c4-b4ff-7ef0a99c5c8e\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"e9732da8-d862-4589-8e3f-6f09ce3aa9d7\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"No_Bikes\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"1a8f5363-0b6f-48bf-83f5-4b593d405008\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "027d60d3-b56f-4150-98b7-a2faf654dcad",
+    "payload": {
+      "name": "BikepointID",
+      "parentObject": {
+        "targetUniqueIdentifier": "c114666b-db9c-4f0e-b29e-7becb1ed814b"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"56eb29b8-dad6-424a-b8b0-ca581be3e86e\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"e9732da8-d862-4589-8e3f-6f09ce3aa9d7\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"BikepointID\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"949af73a-40c6-4a2c-b299-67568d9ea8ca\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "dbb18352-baed-4f8e-b64c-44f65f63e0bf",
+    "payload": {
+      "name": "No_Bikes",
+      "parentObject": {
+        "targetUniqueIdentifier": "c114666b-db9c-4f0e-b29e-7becb1ed814b"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f"
+      },
+      "definition": {
+        "type": "Attribute",
+        "instance": "{\"steps\":[{\"id\":\"c63bc3d7-4703-42a7-9d0b-5a64ccd996eb\",\"name\":\"EventSelectStep\",\"rows\":[{\"arguments\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"e9732da8-d862-4589-8e3f-6f09ce3aa9d7\"}],\"kind\":\"EventReference\",\"name\":\"event\",\"type\":\"complex\"}],\"kind\":\"Event\",\"name\":\"EventSelector\"},{\"arguments\":[{\"name\":\"fieldName\",\"type\":\"string\",\"value\":\"No_Bikes\"}],\"kind\":\"EventField\",\"name\":\"EventFieldSelector\"}]},{\"id\":\"07fcfca5-1fa5-4df9-9684-057271cb497f\",\"name\":\"EventComputeStep\",\"rows\":[{\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"Text\"},{\"name\":\"format\",\"type\":\"string\",\"value\":\"\"}],\"kind\":\"TypeAssertion\",\"name\":\"TypeAssertion\"}]}],\"templateId\":\"BasicEventAttribute\",\"templateVersion\":\"1.3.0\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "a3a88dbe-077f-4635-b5b3-20783ecd1aac",
+    "payload": {
+      "name": "No bikes available in bike station",
+      "parentObject": {
+        "targetUniqueIdentifier": "c114666b-db9c-4f0e-b29e-7becb1ed814b"
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "72dbc7b2-9b65-449b-93e7-b85218a7785f"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"AttributeTrigger\",\"templateVersion\":\"1.3.0\",\"steps\":[{\"name\":\"ScalarSelectStep\",\"id\":\"d5fe4d91-3fc6-4498-a8e2-a264dfa55d60\",\"rows\":[{\"name\":\"AttributeSelector\",\"kind\":\"Attribute\",\"arguments\":[{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"b89b47c2-6774-4d0a-a030-a31d615f0c8c\"}],\"name\":\"attribute\"}]}]},{\"name\":\"ScalarDetectStep\",\"id\":\"8c37218a-9328-4c15-bd2e-65b258a56f38\",\"rows\":[{\"name\":\"NumberBecomes\",\"kind\":\"NumberBecomes\",\"arguments\":[{\"name\":\"op\",\"type\":\"string\",\"value\":\"BecomesLessThanOrEqualTo\"},{\"name\":\"value\",\"type\":\"number\",\"value\":0}]},{\"name\":\"OccurrenceOption\",\"kind\":\"EachTime\",\"arguments\":[]}]},{\"name\":\"ActStep\",\"id\":\"b2dc3565-a2b2-485b-a00d-71f0e5cb46c5\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"en-us\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"fabric@davidpizzihotmail.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"\"},{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"027d60d3-b56f-4150-98b7-a2faf654dcad\"}]},{\"type\":\"string\",\"value\":\" has no bikes\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"The bike point: \"},{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"027d60d3-b56f-4150-98b7-a2faf654dcad\"}]},{\"type\":\"string\",\"value\":\" has \"},{\"kind\":\"AttributeReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"dbb18352-baed-4f8e-b64c-44f65f63e0bf\"}]},{\"type\":\"string\",\"value\":\" bikes. Please replenish the station. \"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  }
+]

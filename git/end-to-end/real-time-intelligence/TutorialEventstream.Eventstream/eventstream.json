@@ -89,6 +89,26 @@
           }
         }
       ]
+    },
+    {
+      "id": "b8cc836a-2193-5adf-961b-87e2055a4b11",
+      "name": "ETJfX4B1gvLz-lnvis6H1S-b321e31b-5203-4321-996e-63ca698d94fb",
+      "type": "Activator",
+      "properties": {
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "itemId": "698d94fb-63ca-996e-4321-5203b321e31b",
+        "inputSerialization": {
+          "type": "Json",
+          "properties": {
+            "encoding": "UTF8"
+          }
+        }
+      },
+      "inputNodes": [
+        {
+          "name": "TutorialEventstream-stream"
+        }
+      ]
     }
   ],
   "streams": [
