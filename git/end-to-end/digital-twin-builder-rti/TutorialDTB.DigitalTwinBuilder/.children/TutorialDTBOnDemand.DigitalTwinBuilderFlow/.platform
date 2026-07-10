@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DigitalTwinBuilderFlow",
+    "displayName": "TutorialDTBOnDemand"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "34ef4cc9-9bb9-8112-4dbb-c7bd83689cc9"
+  }
+}

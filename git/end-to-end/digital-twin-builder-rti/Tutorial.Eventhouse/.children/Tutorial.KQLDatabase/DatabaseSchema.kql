@@ -1,0 +1,15 @@
+// KQL script
+// Use management commands in this script to configure your database items, such as tables, functions, materialized views, and more.
+
+
+.create-merge table bus_data_raw (ActualTime:datetime, TripId:string, BusLine:long, StationNumber:long, ScheduleTime:string, Properties:string) 
+.create-merge table bus_data_processed (ActualTime:datetime, TripId:string, BusLine:long, StationNumber:long, ScheduleTime:datetime, BusState:string, TimeToNextStation:string, StopCode:int) 
+.create-or-alter function with (skipvalidation = "true") extractBusData() {
+    bus_data_raw
+    | extend BusState = tostring(todynamic(Properties).BusState)
+        , TimeToNextStation = tostring(todynamic(Properties).TimeToNextStation)
+        , StopCode = toint(10000 + abs(((toint(BusLine) * 100) + toint(StationNumber)) % 750))
+        , ScheduleTime = todatetime(ScheduleTime)
+    | project-away Properties
+}
+.alter table bus_data_processed policy update "[{\"IsEnabled\":true,\"Source\":\"bus_data_raw\",\"Query\":\"extractBusData\",\"IsTransactional\":false,\"PropagateIngestionProperties\":true,\"ManagedIdentity\":null}]"

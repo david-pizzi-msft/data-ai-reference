@@ -1,0 +1,15 @@
+[
+  {
+    "name": "bus_data_processed",
+    "path": "/Tables/dbo",
+    "target": {
+      "type": "OneLake",
+      "oneLake": {
+        "path": "Tables/bus_data_processed",
+        "itemId": "13f92b73-ab91-b540-4c32-7ba3cdeab642",
+        "workspaceId": "00000000-0000-0000-0000-000000000000",
+        "artifactType": "KustoDatabase"
+      }
+    }
+  }
+]

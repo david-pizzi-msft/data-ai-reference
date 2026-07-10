@@ -1,0 +1,22 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "8a65ada7-85e7-4e29-9190-80bf458c3213",
+        "clusterUri": "https://trd-xmp37xjrnqnza5a2p2.z0.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "cdeab642-7ba3-4c32-b540-ab9113f92b73"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "cea1d9b7-d94a-463a-85f4-7d30ccbbd7ea",
+        "content": "// Enable OneLake availability\n.alter-merge table bus_data_processed policy mirroring dataformat=parquet with (IsEnabled=true, TargetLatencyInMinutes=5)",
+        "title": "Tab",
+        "dataSourceId": "8a65ada7-85e7-4e29-9190-80bf458c3213"
+      }
+    ],
+    "querysetType": "Embedded"
+  }
+}
