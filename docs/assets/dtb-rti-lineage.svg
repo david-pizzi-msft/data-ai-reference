@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 460" font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="End-to-end data lineage from bus stream and stop file through the lakehouse into the digital twin builder ontology">
+  <defs>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto-start-reverse">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#555"/>
+    </marker>
+    <style>
+      .cont  { fill:#f7f7f7; stroke:#aaa; stroke-width:1; }
+      .title { font-size:13px; font-weight:600; fill:#333; }
+      .src   { fill:#ffffff; stroke:#5b7aa5; stroke-width:1.5; }
+      .proc  { fill:#ece7f6; stroke:#7a5ba5; stroke-width:1.5; }
+      .table { fill:#dce8f5; stroke:#3b6ea5; stroke-width:1.5; }
+      .ent   { fill:#e7f0e7; stroke:#4a8a4a; stroke-width:1.5; }
+      .lbl   { font-size:12px; fill:#1a1a1a; }
+      .hd    { font-size:12px; font-weight:600; fill:#1a1a1a; }
+      .sub   { font-size:11px; fill:#444; }
+      .edge  { stroke:#555; stroke-width:1.5; fill:none; }
+      .dash  { stroke:#888; stroke-width:1.3; stroke-dasharray:4 3; fill:none; }
+      .elbl  { font-size:10px; fill:#555; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1120" height="460" fill="#ffffff"/>
+
+  <!-- ===== Ingest column ===== -->
+  <rect class="src"   x="20"  y="20"  width="200" height="40" rx="6"/>
+  <text class="lbl" x="120" y="45"  text-anchor="middle">Buses sample data</text>
+
+  <rect class="proc"  x="20"  y="92"  width="200" height="48" rx="6"/>
+  <text class="hd"  x="120" y="112" text-anchor="middle">Eventstream</text>
+  <text class="sub" x="120" y="128" text-anchor="middle">ManageFields: cast datetime</text>
+
+  <rect class="table" x="20"  y="176" width="200" height="40" rx="6"/>
+  <text class="lbl" x="120" y="201" text-anchor="middle">bus_data_raw (KQL)</text>
+
+  <rect class="table" x="20"  y="248" width="200" height="40" rx="6"/>
+  <text class="lbl" x="120" y="273" text-anchor="middle">bus_data_processed (KQL)</text>
+
+  <rect class="src"   x="20"  y="344" width="200" height="44" rx="6"/>
+  <text class="hd"  x="120" y="364" text-anchor="middle">stops_data.csv</text>
+  <text class="sub" x="120" y="380" text-anchor="middle">file upload</text>
+
+  <!-- ingest edges -->
+  <path class="edge" d="M120,60 L120,90"   marker-end="url(#arrow)"/>
+  <path class="edge" d="M120,140 L120,174" marker-end="url(#arrow)"/>
+  <text class="elbl" x="126" y="160">Eventhouse dest.</text>
+  <path class="edge" d="M120,216 L120,246" marker-end="url(#arrow)"/>
+  <text class="elbl" x="126" y="236">update policy</text>
+
+  <!-- ===== Lakehouse container ===== -->
+  <rect class="cont" x="300" y="208" width="200" height="212" rx="8"/>
+  <text class="title" x="400" y="228" text-anchor="middle">Lakehouse &#183; TutorialLH</text>
+
+  <rect class="table" x="320" y="246" width="160" height="46" rx="6"/>
+  <text class="hd"  x="400" y="266" text-anchor="middle">bus_data_processed</text>
+  <text class="sub" x="400" y="282" text-anchor="middle">OneLake shortcut</text>
+
+  <rect class="table" x="320" y="338" width="160" height="40" rx="6"/>
+  <text class="lbl" x="400" y="363" text-anchor="middle">stops_data</text>
+
+  <!-- source -> lakehouse edges -->
+  <path class="edge" d="M220,268 L318,269" marker-end="url(#arrow)"/>
+  <text class="elbl" x="230" y="260">OneLake shortcut</text>
+  <path class="edge" d="M220,366 L318,358" marker-end="url(#arrow)"/>
+
+  <!-- ===== Bus entity ===== -->
+  <rect class="cont" x="545" y="18"  width="555" height="244" rx="8"/>
+  <text class="title" x="822" y="38" text-anchor="middle">Bus entity &#183; two mappings</text>
+
+  <rect class="ent" x="565" y="52" width="515" height="66" rx="6"/>
+  <text class="hd"  x="822" y="72"  text-anchor="middle">Non-timeseries</text>
+  <text class="sub" x="822" y="90"  text-anchor="middle">UniqueId: TripId</text>
+  <text class="sub" x="822" y="108" text-anchor="middle">TripId_static &#183; StopCode_static</text>
+
+  <rect class="ent" x="565" y="150" width="515" height="98" rx="6"/>
+  <text class="hd"  x="822" y="170" text-anchor="middle">Timeseries</text>
+  <text class="sub" x="822" y="188" text-anchor="middle">Timestamp &#8592; ActualTime</text>
+  <text class="sub" x="822" y="206" text-anchor="middle">ScheduleTime &#183; BusLine &#183; StationNumber</text>
+  <text class="sub" x="822" y="224" text-anchor="middle">StopCode &#183; BusState &#183; TimeToNextStation &#183; TripId</text>
+
+  <path class="dash" d="M822,118 L822,150"/>
+  <text class="elbl" x="830" y="138">link: TripId_static = TripId</text>
+
+  <!-- ===== Stop entity ===== -->
+  <rect class="cont" x="545" y="300" width="555" height="142" rx="8"/>
+  <text class="title" x="822" y="320" text-anchor="middle">Stop entity &#183; one mapping</text>
+
+  <rect class="ent" x="565" y="334" width="515" height="90" rx="6"/>
+  <text class="hd"  x="822" y="354" text-anchor="middle">Non-timeseries</text>
+  <text class="sub" x="822" y="372" text-anchor="middle">UniqueId: Stop_Code</text>
+  <text class="sub" x="822" y="390" text-anchor="middle">DisplayName &#8592; Stop_Name &#183; Borough</text>
+  <text class="sub" x="822" y="408" text-anchor="middle">Latitude &#183; Longitude &#183; Road_Name &#183; ...</text>
+
+  <!-- lakehouse -> entity edges (precise node-to-node) -->
+  <path class="edge" d="M480,262 L563,86"  marker-end="url(#arrow)"/>
+  <text class="elbl" x="498" y="150">maps to</text>
+  <path class="edge" d="M480,272 L563,192" marker-end="url(#arrow)"/>
+  <text class="elbl" x="498" y="244">maps to</text>
+  <path class="edge" d="M480,358 L563,376" marker-end="url(#arrow)"/>
+  <text class="elbl" x="498" y="360">maps to</text>
+
+  <!-- goesTo relationship -->
+  <path class="edge" d="M822,262 L822,332" marker-end="url(#arrow)"/>
+  <text class="elbl" x="830" y="290">goesTo &#183; StopCode_static = Stop_Code &#183; 1:N</text>
+</svg>
