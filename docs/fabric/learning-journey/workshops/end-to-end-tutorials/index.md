@@ -28,7 +28,7 @@ Scenarios within a single Fabric experience.
 | Lab | Scenario | Status |
 | --- | --- | --- |
 | [Power BI](power-bi.md) | Build a dataflow and pipeline into a lakehouse, create a dimensional model, and generate a report. | ⬜ Not started |
-| [Data Factory](data-factory.md) | Ingest with pipelines and transform with dataflows, then add automation and notifications. | ⬜ Not started |
+| [Data Factory](data-factory.md) | Ingest with pipelines and transform with dataflows, then add automation and notifications. | 🟡 In progress |
 | [Data Science AI samples](data-science-ai-samples.md) | Explore Data Science capabilities and examples of ML models addressing common business problems. | ⬜ Not started |
 | [Price prediction with R](price-prediction-r.md) | Build an ML model to analyze, visualize, and predict US avocado prices. | ⬜ Not started |
 | [Application lifecycle management](application-lifecycle-management.md) | Use deployment pipelines with Git integration to develop, test, and publish data and reports. | ⬜ Not started |

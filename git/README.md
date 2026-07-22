@@ -19,3 +19,4 @@ Each Git-connected workspace maps to its own subfolder, grouped by workshop.
 | `end-to-end/real-time-intelligence` | `/git/end-to-end/real-time-intelligence` | [Real-Time Intelligence end-to-end tutorial](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/tutorial-introduction) |
 | `end-to-end/digital-twin-builder-rti` | `/git/end-to-end/digital-twin-builder-rti` | [Digital twin builder (preview) in RTI tutorial](https://learn.microsoft.com/en-us/fabric/real-time-intelligence/digital-twin-builder/tutorial-rti-0-introduction) |
 | `end-to-end/data-warehouse` | `/git/end-to-end/data-warehouse` | [Data warehouse end-to-end tutorial](https://learn.microsoft.com/en-us/fabric/data-warehouse/tutorial-introduction) |
+| `end-to-end/data-factory` | `/git/end-to-end/data-factory` | [Data Factory end-to-end tutorial](https://learn.microsoft.com/en-us/fabric/data-factory/tutorial-end-to-end-introduction) |
